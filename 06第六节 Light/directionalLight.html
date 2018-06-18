@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>平行光案例</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        canvas {
+            display: block;
+        }
+
+    </style>
+</head>
+<body onload="draw();">
+
+</body>
+<script src="https://cdn.bootcss.com/three.js/93/three.js"></script>
+<script src="http://www.wjceo.com/lib/js/libs/stats.min.js"></script>
+<script src="https://cdn.bootcss.com/dat-gui/0.7.1/dat.gui.min.js"></script>
+<script>
+    var renderer, camera, scene, gui, stats, ambientLight, directionalLight;
+    var debug, sphere, cube, plane;
+    function initRender() {
+        renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        //告诉渲染器需要阴影效果
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 默认的是，没有设置的这个清晰 THREE.PCFShadowMap
+        document.body.appendChild(renderer.domElement);
+    }
+    function initCamera() {
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 100, 200);
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+    }
+    function initScene() {
+        scene = new THREE.Scene();
+    }
+    function initGui() {
+        //声明一个保存需求修改的相关数据的对象
+        gui = {
+            ambientLight:"#111111", //环境光源
+            directionalLight:"#ffffff", //点光源
+            intensity:1, //灯光强度
+            visible:true, //是否可见
+            castShadow:true, //是否开启阴影
+            debug:true, //开启关闭光照辅助
+            targetX:0, //朝向x轴坐标
+            targetY:0, //朝向y轴坐标
+            targetZ:0, //朝向z轴坐标
+            near:20, //阴影渲染的最近距离
+            far:100, //阴影渲染的最远距离
+            left:-50, //阴影的最左边距离
+            right: 50, //阴影的最右边距离
+            top: 50, //阴影的最上边距离
+            bottom: -50, //阴影的最下边距离
+        };
+
+        var datGui = new dat.GUI();
+        //将设置属性添加到gui当中，gui.add(对象，属性，最小值，最大值）
+        datGui.addColor(gui,"ambientLight").name("环境光颜色").onChange(function (e) {
+            ambientLight.color.set(e);
+        });
+        datGui.addColor(gui,"directionalLight").name("平行光颜色").onChange(function (e) {
+            directionalLight.color.set(e);
+        });
+        datGui.add(gui,"intensity",0,5).name("光线强度").onChange(function (e) {
+            directionalLight.intensity = e;
+        });
+        datGui.add(gui,"visible").name("显示平行光").onChange(function (e) {
+            directionalLight.visible = e;
+        });
+        datGui.add(gui,"castShadow").name("显示阴影").onChange(function (e) {
+            directionalLight.castShadow = e;
+        });
+        datGui.add(gui,"debug").name("开启光照辅助").onChange(function (e) {
+            debug.visible = e;
+        });
+
+        datGui.add(gui, "targetX", -20, 20).name("焦点X坐标位置").onChange(changeSpherePosition);
+        datGui.add(gui, "targetY", 0, 20).name("焦点Y坐标位置").onChange(changeSpherePosition);
+        datGui.add(gui, "targetZ", -20, 20).name("焦点Z坐标位置").onChange(changeSpherePosition);
+
+        //修改球体位置的方法，平行光的target就是球
+        function changeSpherePosition() {
+            sphere.position.set(gui.targetX, gui.targetY, gui.targetZ);
+        }
+
+        var camera = datGui.addFolder("阴影设置");
+
+        camera.add(gui, "near", 0, 50).name("最近距离").onChange(updateShadow);
+        camera.add(gui, "far", 50, 100).name("最近距离").onChange(updateShadow);
+        camera.add(gui, "left", -200, 0).name("最左距离").onChange(updateShadow);
+        camera.add(gui, "right", 0, 200).name("最右距离").onChange(updateShadow);
+        camera.add(gui, "top", 0, 200).name("最上距离").onChange(updateShadow);
+        camera.add(gui, "bottom", -200, 0).name("最下距离").onChange(updateShadow);
+
+        function updateShadow() {
+            directionalLight.shadow.camera.near = gui.near; //产生阴影的最近距离
+            directionalLight.shadow.camera.far = gui.far; //产生阴影的最远距离
+            directionalLight.shadow.camera.left = gui.left; //产生阴影距离位置的最左边位置
+            directionalLight.shadow.camera.right = gui.right; //最右边
+            directionalLight.shadow.camera.top = gui.top; //最上边
+            directionalLight.shadow.camera.bottom = gui.bottom; //最下面
+
+            directionalLight.shadow.camera.updateProjectionMatrix();
+        }
+    }
+    function initLight() {
+        ambientLight = new THREE.AmbientLight("#111111");
+        scene.add(ambientLight);
+
+        directionalLight = new THREE.DirectionalLight("#ffffff");
+        directionalLight.position.set(40, 60, 10);
+
+        directionalLight.shadow.camera.near = gui.near; //产生阴影的最近距离
+        directionalLight.shadow.camera.far = gui.far; //产生阴影的最远距离
+        directionalLight.shadow.camera.left = -50; //产生阴影距离位置的最左边位置
+        directionalLight.shadow.camera.right = 50; //最右边
+        directionalLight.shadow.camera.top = 50; //最上边
+        directionalLight.shadow.camera.bottom = -50; //最下面
+
+        //这两个值决定生成阴影密度 默认512
+        directionalLight.shadow.mapSize.height = 1024;
+        directionalLight.shadow.mapSize.width = 1024;
+
+        //告诉平行光需要开启阴影投射
+        directionalLight.castShadow = true;
+
+        scene.add(directionalLight);
+
+        //添加灯光辅助
+        debug = new THREE.CameraHelper(directionalLight.shadow.camera);
+        debug.name = "debug";
+        scene.add(debug);
+    }
+    function initModel() {
+
+        //球体
+        var sphereGeometry = new THREE.SphereGeometry(5, 24, 16);
+        var sphereMaterial = new THREE.MeshPhongMaterial({color:0xff00ff});
+
+        sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+
+        sphere.castShadow = true; //开启阴影
+
+        directionalLight.target = sphere; //平行光的焦点到球
+
+        scene.add(sphere);
+
+        //立方体
+        var cubeGeometry = new THREE.CubeGeometry(10,10,10);
+
+        var cubeMaterial = new THREE.MeshLambertMaterial({color: 0x00ffff});
+
+        cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+        cube.position.x = 30;
+        cube.position.z = -5;
+
+        cube.castShadow = true; //开启阴影
+
+        scene.add(cube);
+
+        //底部平面
+        var planeGeometry = new THREE.PlaneGeometry(100, 100);
+        var planeMaterial = new THREE.MeshLambertMaterial({color: 0xaaaaaa});
+
+        plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        plane.rotation.x = -0.5 * Math.PI;
+        plane.position.y = -5;
+
+        plane.receiveShadow = true; //可以接收阴影
+
+        scene.add(plane);
+
+    }
+    function initStats() {
+        stats = new Stats();
+        document.body.appendChild(stats.dom);
+    }
+    function render() {
+        renderer.render(scene, camera);
+    }
+    //窗口变动触发的函数
+    function onWindowResize() {
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+    }
+
+    function animate() {
+        //更新控制器
+        render();
+
+        //更新性能插件
+        stats.update();
+
+        //更新光照辅助
+        if(debug){
+            debug.update();
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    function draw() {
+        initGui();
+        initRender();
+        initScene();
+        initCamera();
+        initLight();
+        initModel();
+        initStats();
+
+        animate();
+        window.onresize = onWindowResize;
+    }
+</script>
+</html>

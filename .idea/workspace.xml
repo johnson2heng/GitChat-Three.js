@@ -14,29 +14,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="spotLight .html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/06第六节 Light/spotLight .html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/03第三节/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-939">
-              <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+            <state relative-caret-position="228">
+              <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hemisphereLight.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/06第六节 Light/hemisphereLight.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/02第二节/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-              <folding>
-                <element signature="e#6401#6483#0" />
-                <element signature="e#6506#6553#0" />
-              </folding>
+            <state relative-caret-position="380">
+              <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/01第一节/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,10 +56,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/js/stats.min.js" />
+        <option value="$PROJECT_DIR$/js/dat.gui.min.js" />
+        <option value="$PROJECT_DIR$/06第六节 Light/hemisphereLight.html" />
+        <option value="$PROJECT_DIR$/06第六节 Light/spotLight .html" />
         <option value="$PROJECT_DIR$/06第六节 Light/directionalLight.html" />
         <option value="$PROJECT_DIR$/06第六节 Light/pointLight .html" />
-        <option value="$PROJECT_DIR$/06第六节 Light/spotLight .html" />
-        <option value="$PROJECT_DIR$/06第六节 Light/hemisphereLight.html" />
+        <option value="$PROJECT_DIR$/05第五节 material/index.html" />
+        <option value="$PROJECT_DIR$/04第四节 geometry/index.html" />
+        <option value="$PROJECT_DIR$/03第三节/index.html" />
+        <option value="$PROJECT_DIR$/03第三节/index0.html" />
+        <option value="$PROJECT_DIR$/02第二节/index.html" />
+        <option value="$PROJECT_DIR$/01第一节/index.html" />
       </list>
     </option>
   </component>
@@ -78,6 +98,26 @@
             <path>
               <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
+              <item name="01第一节" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
+              <item name="02第二节" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
+              <item name="03第三节" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
+              <item name="04第四节 geometry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
               <item name="05第五节 material" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -102,6 +142,9 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\work\github\GitChat-Three.js\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\work\github\GitChat-Three.js\06第六节 Light" />
     </key>
@@ -128,12 +171,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529336811315</updated>
-      <workItem from="1529336812451" duration="4171000" />
+      <workItem from="1529336812451" duration="4672000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4171000" />
+    <option name="totallyTimeSpent" value="4672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -167,38 +210,83 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/05第五节 material/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/06第六节 Light/pointLight .html">
+    <entry file="file://$PROJECT_DIR$/js/stats.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="342">
+          <caret line="4" column="833" selection-start-line="4" selection-start-column="833" selection-end-line="4" selection-end-column="833" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/dat.gui.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="12" column="49666" selection-start-line="12" selection-start-column="49666" selection-end-line="12" selection-end-column="49666" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/06第六节 Light/directionalLight.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
-          <caret line="137" column="71" lean-forward="true" selection-start-line="137" selection-start-column="16" selection-end-line="137" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/06第六节 Light/spotLight .html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-939">
-          <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+        <state relative-caret-position="192">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/06第六节 Light/hemisphereLight.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding>
-            <element signature="e#6401#6483#0" />
-            <element signature="e#6506#6553#0" />
-          </folding>
+        <state relative-caret-position="380">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="23" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06第六节 Light/pointLight .html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06第六节 Light/spotLight .html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/05第五节 material/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/04第四节 geometry/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03第三节/index0.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03第三节/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02第二节/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01第一节/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>

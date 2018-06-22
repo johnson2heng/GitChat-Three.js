@@ -15,3 +15,4 @@
 - 点光源案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/06%E7%AC%AC%E5%85%AD%E8%8A%82%20Light/pointLight.html)
 - 聚光灯光源 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/06%E7%AC%AC%E5%85%AD%E8%8A%82%20Light/spotLight.html)
 - 户外光案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/06%E7%AC%AC%E5%85%AD%E8%8A%82%20Light/hemisphereLight.html)
+7. 07第七节 camera [点击这里](https://johnson2heng.github.io/GitChat-Three.js/07%E7%AC%AC%E4%B8%83%E8%8A%82%20camera/index.html)

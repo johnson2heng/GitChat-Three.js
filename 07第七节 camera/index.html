@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>正交相机和透视相机的对比</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        canvas {
+            display: block;
+        }
+
+    </style>
+</head>
+<body onload="draw();">
+
+</body>
+<script src="../js/three.js"></script>
+<script src="../js/stats.min.js"></script>
+<script src="../js/dat.gui.min.js"></script>
+<script>
+    var renderer, camera, scene, gui, stats;
+    var group, perspectiveCamera, orthographicCamera;
+
+    function initRender() {
+        renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        renderer.autoClear = false; //设置场景不自动清除内容，才能够让两个相机同时渲染页面
+        //告诉渲染器需要阴影效果
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 默认的是，没有设置的这个清晰 THREE.PCFShadowMap
+        document.body.appendChild(renderer.domElement);
+    }
+
+    function initCamera() {
+
+        var aspect = window.innerWidth / window.innerHeight / 2;
+
+        //创建透视相机
+        perspectiveCamera = new THREE.PerspectiveCamera(45, aspect, 0.1, 1000);
+
+        //创建正交相机
+        var size = 200;
+        orthographicCamera = new THREE.OrthographicCamera(size * aspect / -2, size * aspect / 2, size / 2, size / -2, 0.1, 1000);
+
+        //两个相机设置相同的位置
+        perspectiveCamera.position.set(0, 100, 200);
+        orthographicCamera.position.set(0, 100, 200);
+
+        //设置两个相机焦点都为原点
+        perspectiveCamera.lookAt(new THREE.Vector3());
+        orthographicCamera.lookAt(new THREE.Vector3());
+
+        //添加到场景
+        scene.add(perspectiveCamera);
+        scene.add(orthographicCamera);
+
+    }
+
+    function initScene() {
+        scene = new THREE.Scene();
+    }
+
+    function initGui() {
+        //声明一个保存需求修改的相关数据的对象
+        gui = {
+            auto: false, //自动旋转
+            reset: function () {
+                group.rotation.y = 0;
+            }
+        };
+
+        var datGui = new dat.GUI();
+        //将设置属性添加到gui当中，gui.add(对象，属性，最小值，最大值）
+        datGui.add(gui, "auto").name("自动旋转");
+        datGui.add(gui, "reset").name("重置");
+    }
+
+    function initLight() {
+        var ambientLight = new THREE.AmbientLight("#111111");
+        scene.add(ambientLight);
+
+        var directionalLight = new THREE.DirectionalLight("#ffffff");
+        directionalLight.position.set(40, 60, 10);
+
+        directionalLight.shadow.camera.near = 0; //产生阴影的最近距离
+        directionalLight.shadow.camera.far = 200; //产生阴影的最远距离
+        directionalLight.shadow.camera.left = -50; //产生阴影距离位置的最左边位置
+        directionalLight.shadow.camera.right = 50; //最右边
+        directionalLight.shadow.camera.top = 50; //最上边
+        directionalLight.shadow.camera.bottom = -50; //最下面
+
+        //这两个值决定生成阴影密度 默认512
+        directionalLight.shadow.mapSize.height = 1024;
+        directionalLight.shadow.mapSize.width = 1024;
+
+        //告诉平行光需要开启阴影投射
+        directionalLight.castShadow = true;
+
+        scene.add(directionalLight);
+    }
+
+    function initModel() {
+
+        group = new THREE.Group(); //创建一个模型组
+
+        //球体
+        var sphereGeometry = new THREE.SphereGeometry(5, 24, 16);
+        var sphereMaterial = new THREE.MeshPhongMaterial({color: 0xff00ff});
+
+        var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+
+        sphere.position.x = -10;
+        sphere.position.z = -10;
+
+        sphere.castShadow = true; //开启阴影
+
+        group.add(sphere);
+
+        //立方体
+        var cubeGeometry = new THREE.BoxGeometry(10, 10, 10);
+
+        var cubeMaterial = new THREE.MeshLambertMaterial({color: 0x00ffff});
+
+        var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+        cube.position.x = 20;
+        cube.position.z = 20;
+
+        cube.castShadow = true; //开启阴影
+
+        group.add(cube);
+
+        //底部平面
+        var planeGeometry = new THREE.PlaneGeometry(100, 100);
+        var planeMaterial = new THREE.MeshLambertMaterial({color: 0xaaaaaa});
+
+        var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        plane.rotation.x = -0.5 * Math.PI;
+        plane.position.y = -5;
+
+        plane.receiveShadow = true; //可以接收阴影
+
+        group.add(plane);
+
+        scene.add(group);
+
+    }
+
+    function initStats() {
+        stats = new Stats();
+        document.body.appendChild(stats.dom);
+    }
+
+    function render() {
+
+        if (gui.auto) {
+            group.rotation.y += 0.01;
+        }
+
+        renderer.clear(true, true, true); //手动清除场景
+
+        var size = renderer.getSize(); //获取到当前的显示区域的宽高
+
+        renderer.setViewport(0, 0, size.width / 2, size.height); //设置视口，从 (x, y) 到 (x + width, y + height)。
+        renderer.render(scene, perspectiveCamera);
+
+        renderer.setViewport(size.width / 2, 0, size.width / 2, size.height);
+        renderer.render(scene, orthographicCamera);
+    }
+
+    //窗口变动触发的函数
+    function onWindowResize() {
+        var aspect = window.innerWidth / window.innerHeight / 2;
+
+        //更新透视相机
+        perspectiveCamera.aspect = aspect;
+        perspectiveCamera.updateProjectionMatrix();
+
+        //更新正交相机
+        var size = 200;
+        orthographicCamera.left = size * aspect / -2;
+        orthographicCamera.right = size * aspect / 2;
+        orthographicCamera.top = size / 2;
+        orthographicCamera.bottom = size / -2;
+        orthographicCamera.updateProjectionMatrix();
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+        //更新控制器
+        render();
+
+        //更新性能插件
+        stats.update();
+
+        requestAnimationFrame(animate);
+    }
+
+    function draw() {
+        initGui();
+        initRender();
+        initScene();
+        initCamera();
+        initLight();
+        initModel();
+        initStats();
+
+        animate();
+        window.onresize = onWindowResize;
+    }
+</script>
+</html>

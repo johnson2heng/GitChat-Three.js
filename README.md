@@ -18,3 +18,5 @@
 7. 07第七节 camera
 - 透视相机和正交相机的对比 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/07%E7%AC%AC%E4%B8%83%E8%8A%82%20camera/index.html)
 - 制作相机控制器 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/07%E7%AC%AC%E4%B8%83%E8%8A%82%20camera/control.html)
+8. 08第八节 points
+- 精灵的案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/08%E7%AC%AC%E5%85%AB%E8%8A%82%20points/sprite.html)

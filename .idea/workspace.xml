@@ -14,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/07第七节 camera/index.html">
+      <file leaf-file-name="control.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/07第七节 camera/control.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="163" column="48" selection-start-line="163" selection-start-column="48" selection-end-line="163" selection-end-column="48" />
+            <state relative-caret-position="76">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding>
                 <element signature="e#587#938#0" />
                 <element signature="e#965#1166#0" />
@@ -27,19 +27,18 @@
                 <element signature="e#4217#5199#0" />
                 <element signature="e#5225#6286#0" />
                 <element signature="e#6312#6394#0" />
+                <element signature="e#3451#3467#0" />
+                <element signature="e#3597#3621#0" />
+                <element signature="e#3867#3891#0" />
+                <element signature="e#4222#4246#0" />
+                <element signature="e#3836#3860#0" />
+                <element signature="e#3995#4019#0" />
+                <element signature="e#5445#5469#0" />
+                <element signature="e#6417#6464#0" />
                 <element signature="e#6511#6690#0" />
                 <element signature="e#6715#6914#0" />
                 <element signature="e#6936#7152#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="directionalLight.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/06第六节 Light/directionalLight.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="120" column="8" lean-forward="true" selection-start-line="120" selection-start-column="8" selection-end-line="129" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -62,9 +61,7 @@
       <list>
         <option value="$PROJECT_DIR$/js/stats.min.js" />
         <option value="$PROJECT_DIR$/js/dat.gui.min.js" />
-        <option value="$PROJECT_DIR$/06第六节 Light/hemisphereLight.html" />
         <option value="$PROJECT_DIR$/06第六节 Light/spotLight .html" />
-        <option value="$PROJECT_DIR$/06第六节 Light/directionalLight.html" />
         <option value="$PROJECT_DIR$/06第六节 Light/pointLight .html" />
         <option value="$PROJECT_DIR$/05第五节 material/index.html" />
         <option value="$PROJECT_DIR$/04第四节 geometry/index.html" />
@@ -73,6 +70,11 @@
         <option value="$PROJECT_DIR$/02第二节/index.html" />
         <option value="$PROJECT_DIR$/01第一节/index.html" />
         <option value="$PROJECT_DIR$/07第七节 camera/index.html" />
+        <option value="$PROJECT_DIR$/06第六节 Light/directionalLight.html" />
+        <option value="$PROJECT_DIR$/06第六节 Light/hemisphereLight.html" />
+        <option value="$PROJECT_DIR$/06第六节 Light/pointLight.html" />
+        <option value="$PROJECT_DIR$/06第六节 Light/spotLight.html" />
+        <option value="$PROJECT_DIR$/07第七节 camera/control.html" />
       </list>
     </option>
   </component>
@@ -85,7 +87,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1050" />
@@ -95,7 +97,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -117,12 +118,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../three.js-v92" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../panorama" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -130,11 +132,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\github\GitChat-Three.js\07第七节 camera" />
+      <recent name="D:\work\github\GitChat-Three.js\06第六节 Light" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\work\github\GitChat-Three.js\js" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\work\github\GitChat-Three.js\06第六节 Light" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -165,11 +168,12 @@
       <workItem from="1529498528556" duration="649000" />
       <workItem from="1529588622706" duration="599000" />
       <workItem from="1529688968036" duration="6806000" />
+      <workItem from="1529742215963" duration="10860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17998000" />
+    <option name="totallyTimeSpent" value="28858000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -203,6 +207,20 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/07第七节 camera/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3097">
+          <caret line="163" column="48" selection-start-line="163" selection-start-column="48" selection-end-line="163" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06第六节 Light/directionalLight.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="120" column="8" lean-forward="true" selection-start-line="120" selection-start-column="8" selection-end-line="129" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/06第六节 Light/hemisphereLight.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2147">
@@ -252,20 +270,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/06第六节 Light/pointLight.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/06第六节 Light/spotLight.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/05第五节 material/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -283,24 +287,45 @@
     <entry file="file://$PROJECT_DIR$/03第三节/index.html" />
     <entry file="file://$PROJECT_DIR$/02第二节/index.html" />
     <entry file="file://$PROJECT_DIR$/01第一节/index.html" />
+    <entry file="file://$PROJECT_DIR$/06第六节 Light/spotLight.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/06第六节 Light/pointLight.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/06第六节 Light/hemisphereLight.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="131" column="15" lean-forward="true" selection-end-line="153" selection-end-column="7" />
+        <state relative-caret-position="316">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/06第六节 Light/directionalLight.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="120" column="8" lean-forward="true" selection-start-line="120" selection-start-column="8" selection-end-line="129" selection-end-column="53" />
+        <state relative-caret-position="323">
+          <caret line="140" column="16" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/07第七节 camera/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="163" column="48" selection-start-line="163" selection-start-column="48" selection-end-line="163" selection-end-column="48" />
+        <state relative-caret-position="2926">
+          <caret line="154" column="45" lean-forward="true" selection-start-line="154" selection-start-column="45" selection-end-line="154" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/07第七节 camera/control.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding>
             <element signature="e#587#938#0" />
             <element signature="e#965#1166#0" />
@@ -309,6 +334,14 @@
             <element signature="e#4217#5199#0" />
             <element signature="e#5225#6286#0" />
             <element signature="e#6312#6394#0" />
+            <element signature="e#3451#3467#0" />
+            <element signature="e#3597#3621#0" />
+            <element signature="e#3867#3891#0" />
+            <element signature="e#4222#4246#0" />
+            <element signature="e#3836#3860#0" />
+            <element signature="e#3995#4019#0" />
+            <element signature="e#5445#5469#0" />
+            <element signature="e#6417#6464#0" />
             <element signature="e#6511#6690#0" />
             <element signature="e#6715#6914#0" />
             <element signature="e#6936#7152#0" />

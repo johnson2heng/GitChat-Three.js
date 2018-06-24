@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/08第八节 points/points.html" line="105" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8b42a8c9-d1ac-4af2-a752-985d93819337" name="默认的" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -14,67 +17,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="control.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/07第七节 camera/control.html">
+      <file leaf-file-name="points.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/08第八节 points/points.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="147" column="25" lean-forward="true" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+            <state relative-caret-position="733">
+              <caret line="130" column="25" lean-forward="true" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
               <folding>
-                <element signature="e#587#938#0" />
-                <element signature="e#965#1166#0" />
-                <element signature="e#1192#1234#0" />
-                <element signature="e#1258#4191#0" />
-                <element signature="e#4217#5199#0" />
-                <element signature="e#5225#6286#0" />
-                <element signature="e#6312#6394#0" />
-                <element signature="e#3597#3621#0" />
-                <element signature="e#4222#4246#0" />
-                <element signature="e#3836#3860#0" />
-                <element signature="e#3995#4019#0" />
-                <element signature="e#5445#5469#0" />
-                <element signature="e#6417#6464#0" />
-                <element signature="e#6511#6690#0" />
-                <element signature="e#6715#6914#0" />
-                <element signature="e#6936#7152#0" />
+                <element signature="e#550#901#0" />
+                <element signature="e#929#1130#0" />
+                <element signature="e#1157#1199#0" />
+                <element signature="e#1224#1362#0" />
+                <element signature="e#1389#2214#0" />
+                <element signature="e#4732#5010#0" />
+                <element signature="e#5254#8480#0" />
+                <element signature="e#7508#7679#0" />
+                <element signature="e#7976#8089#0" />
+                <element signature="e#8162#8450#0" />
+                <element signature="e#8489#9253#0" />
+                <element signature="e#8507#8589#0" />
+                <element signature="e#8618#11426#0" />
+                <element signature="e#11450#11497#0" />
+                <element signature="e#11529#11708#0" />
+                <element signature="e#11733#11857#0" />
+                <element signature="e#11879#12119#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sprite.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/08第八节 points/sprite.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="24" column="76" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
-              <folding>
-                <element signature="e#554#905#0" />
-                <element signature="e#933#1134#0" />
-                <element signature="e#1161#1203#0" />
-                <element signature="e#1228#1366#0" />
-                <element signature="e#1393#2218#0" />
-                <element signature="e#2245#3348#0" />
-                <element signature="e#3367#3383#0" />
-                <element signature="e#4234#4354#0" />
-                <element signature="e#4872#5727#0" />
-                <element signature="e#5907#6094#0" />
-                <element signature="e#6423#6544#0" />
-                <element signature="e#6625#6945#0" />
-                <element signature="e#3375#3457#0" />
-                <element signature="e#3486#6294#0" />
-                <element signature="e#6318#6365#0" />
-                <element signature="e#6397#6576#0" />
-                <element signature="e#6601#6725#0" />
-                <element signature="e#6747#6987#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="three.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/three.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3615" column="27" selection-start-line="3615" selection-start-column="22" selection-end-line="3615" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -113,6 +79,7 @@
         <option value="$PROJECT_DIR$/07第七节 camera/control.html" />
         <option value="$PROJECT_DIR$/08第八节 points/canvas.html" />
         <option value="$PROJECT_DIR$/08第八节 points/sprite.html" />
+        <option value="$PROJECT_DIR$/08第八节 points/points.html" />
       </list>
     </option>
   </component>
@@ -125,10 +92,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1050" />
+    <option name="y" value="-8" />
+    <option name="width" value="1932" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -142,6 +110,11 @@
               <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
+              <item name="08第八节 points" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -152,7 +125,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../panorama" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -197,15 +170,17 @@
       <workItem from="1529498528556" duration="649000" />
       <workItem from="1529588622706" duration="599000" />
       <workItem from="1529688968036" duration="6806000" />
-      <workItem from="1529742215963" duration="17153000" />
+      <workItem from="1529742215963" duration="17810000" />
+      <workItem from="1529820019377" duration="1320000" />
+      <workItem from="1529834401379" duration="8961000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35151000" />
+    <option name="totallyTimeSpent" value="46089000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
@@ -241,6 +216,55 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/07第七节 camera/control.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2793">
+          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08第八节 points/sprite.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1805">
+          <caret line="95" column="42" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
+          <folding>
+            <element signature="e#550#901#0" />
+            <element signature="e#929#1130#0" />
+            <element signature="e#1157#1199#0" />
+            <element signature="e#1224#1362#0" />
+            <element signature="e#1389#2214#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595726">
+          <caret line="31305" column="45" lean-forward="true" selection-start-line="31305" selection-start-column="45" selection-end-line="31305" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/07第七节 camera/control.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2793">
+          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08第八节 points/sprite.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1805">
+          <caret line="95" column="42" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595574">
+          <caret line="31297" column="37" selection-start-line="31297" selection-start-column="32" selection-end-line="31297" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/07第七节 camera/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3097">
@@ -356,68 +380,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/07第七节 camera/control.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="147" column="25" lean-forward="true" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
-          <folding>
-            <element signature="e#587#938#0" />
-            <element signature="e#965#1166#0" />
-            <element signature="e#1192#1234#0" />
-            <element signature="e#1258#4191#0" />
-            <element signature="e#4217#5199#0" />
-            <element signature="e#5225#6286#0" />
-            <element signature="e#6312#6394#0" />
-            <element signature="e#3597#3621#0" />
-            <element signature="e#4222#4246#0" />
-            <element signature="e#3836#3860#0" />
-            <element signature="e#3995#4019#0" />
-            <element signature="e#5445#5469#0" />
-            <element signature="e#6417#6464#0" />
-            <element signature="e#6511#6690#0" />
-            <element signature="e#6715#6914#0" />
-            <element signature="e#6936#7152#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/08第八节 points/canvas.html" />
     <entry file="file://$PROJECT_DIR$/js/three.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3615" column="27" selection-start-line="3615" selection-start-column="22" selection-end-line="3615" selection-end-column="27" />
+        <state relative-caret-position="637">
+          <caret line="31305" column="45" selection-start-line="31305" selection-start-column="45" selection-end-line="31305" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/08第八节 points/canvas.html">
+    <entry file="file://$PROJECT_DIR$/07第七节 camera/control.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="101" column="5" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+        <state relative-caret-position="475">
+          <caret line="159" column="33" lean-forward="true" selection-start-line="159" selection-start-column="33" selection-end-line="159" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/08第八节 points/sprite.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="24" column="76" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
+        <state relative-caret-position="1227">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
           <folding>
-            <element signature="e#554#905#0" />
-            <element signature="e#933#1134#0" />
-            <element signature="e#1161#1203#0" />
-            <element signature="e#1228#1366#0" />
-            <element signature="e#1393#2218#0" />
-            <element signature="e#2245#3348#0" />
-            <element signature="e#3367#3383#0" />
-            <element signature="e#4234#4354#0" />
-            <element signature="e#4872#5727#0" />
-            <element signature="e#5907#6094#0" />
-            <element signature="e#6423#6544#0" />
-            <element signature="e#6625#6945#0" />
-            <element signature="e#3375#3457#0" />
-            <element signature="e#3486#6294#0" />
-            <element signature="e#6318#6365#0" />
-            <element signature="e#6397#6576#0" />
-            <element signature="e#6601#6725#0" />
-            <element signature="e#6747#6987#0" />
+            <element signature="e#550#901#0" />
+            <element signature="e#929#1130#0" />
+            <element signature="e#1157#1199#0" />
+            <element signature="e#1224#1362#0" />
+            <element signature="e#1389#2214#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08第八节 points/points.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="733">
+          <caret line="130" column="25" lean-forward="true" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
+          <folding>
+            <element signature="e#550#901#0" />
+            <element signature="e#929#1130#0" />
+            <element signature="e#1157#1199#0" />
+            <element signature="e#1224#1362#0" />
+            <element signature="e#1389#2214#0" />
+            <element signature="e#4732#5010#0" />
+            <element signature="e#5254#8480#0" />
+            <element signature="e#7508#7679#0" />
+            <element signature="e#7976#8089#0" />
+            <element signature="e#8162#8450#0" />
+            <element signature="e#8489#9253#0" />
+            <element signature="e#8507#8589#0" />
+            <element signature="e#8618#11426#0" />
+            <element signature="e#11450#11497#0" />
+            <element signature="e#11529#11708#0" />
+            <element signature="e#11733#11857#0" />
+            <element signature="e#11879#12119#0" />
           </folding>
         </state>
       </provider>

@@ -46,10 +46,39 @@
 
     function initGui() {
         //声明一个保存需求修改的相关数据的对象
-        gui = {};
+        gui = {
+            enabled:true,
+            rotateSpeed:3.0,
+            zoomSpeed:1.2,
+            panSpeed:0.3,
+            noRotate:false,
+            noZoom:false,
+            noPan:false,
+            staticMoving:false,
+            dynamicDampingFactor:0.2,
+            minDistance:0,
+            maxDistance:1000
+        };
 
         var datGui = new dat.GUI();
         //将设置属性添加到gui当中，gui.add(对象，属性，最小值，最大值）
+        datGui.add(gui, "enabled").name("开启控制器").onChange(change);
+        datGui.add(gui, "rotateSpeed", 1.0, 10.0).name("拖拽旋转速度").onChange(change);
+        datGui.add(gui, "zoomSpeed", 1.0, 5).name("缩放速度").onChange(change);
+        datGui.add(gui, "panSpeed", 0.1, 1.0).name("移动速度").onChange(change);
+        datGui.add(gui, "noRotate").name("关闭旋转").onChange(change);
+        datGui.add(gui, "noZoom").name("关闭缩放").onChange(change);
+        datGui.add(gui, "noPan").name("关闭移动").onChange(change);
+        datGui.add(gui, "staticMoving").name("关闭惯性移动").onChange(change);
+        datGui.add(gui, "dynamicDampingFactor", 0.1, 1.0).name("惯性移动阻力").onChange(change);
+        datGui.add(gui, "minDistance", 0, 500).name("最小距离").onChange(change);
+        datGui.add(gui, "maxDistance", 500, 1000).name("最大距离").onChange(change);
+
+        function change() {
+            for(var i in gui){
+                control[i] = gui[i];
+            }
+        }
     }
 
     function initLight() {

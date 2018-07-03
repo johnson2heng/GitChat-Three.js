@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>TrackballControls控制器案例</title>
+    <title>DeviceOrientationControls控制器案例</title>
     <style type="text/css">
         html, body {
             margin: 0;
@@ -46,10 +46,15 @@
 
     function initGui() {
         //声明一个保存需求修改的相关数据的对象
-        gui = {};
+        gui = {
+            enabled:true
+        };
 
         var datGui = new dat.GUI();
         //将设置属性添加到gui当中，gui.add(对象，属性，最小值，最大值）
+        datGui.add(gui, "enabled").name("开启控制器").onChange(function (e) {
+            control.enabled = e;
+        })
     }
 
     function initLight() {

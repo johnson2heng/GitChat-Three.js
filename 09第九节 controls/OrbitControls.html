@@ -46,10 +46,53 @@
 
     function initGui() {
         //声明一个保存需求修改的相关数据的对象
-        gui = {};
+        gui = {
+            enabled:true,
+            minDistance:0,
+            maxDistance:1000,
+            minPolarAngle:0,
+            maxPolarAngle:Math.PI,
+            enableDamping:false,
+            dampingFactor:0.25,
+            enableZoom:true,
+            zoomSpeed:1.0,
+            enableRotate:true,
+            rotateSpeed:1.0,
+            enablePan:true,
+            panSpeed:1.0,
+            screenSpacePanning:false,
+            keyPanSpeed:7.0,
+            autoRotate:false,
+            autoRotateSpeed:2.0,
+            enableKeys:true
+        };
 
         var datGui = new dat.GUI();
         //将设置属性添加到gui当中，gui.add(对象，属性，最小值，最大值）
+        datGui.add(gui, "enabled").name("开启控制器").onChange(change);
+        datGui.add(gui, "minDistance", 0, 500).name("最小距离").onChange(change);
+        datGui.add(gui, "maxDistance", 500, 1000).name("最大距离").onChange(change);
+        datGui.add(gui, "minPolarAngle", 0, Math.PI/2).name("最小弧度").onChange(change);
+        datGui.add(gui, "maxPolarAngle", Math.PI/2, Math.PI).name("最大弧度").onChange(change);
+        datGui.add(gui, "enableDamping").name("惯性移动").onChange(change);
+        datGui.add(gui, "dampingFactor", 0, 1.0).name("惯性阻力").onChange(change);
+        datGui.add(gui, "enableZoom").name("开启缩放").onChange(change);
+        datGui.add(gui, "zoomSpeed", 0.1, 10).name("缩放速度").onChange(change);
+        datGui.add(gui, "enableRotate").name("开启旋转").onChange(change);
+        datGui.add(gui, "rotateSpeed", 0.1, 10).name("旋转速度").onChange(change);
+        datGui.add(gui, "enablePan").name("开启焦点移动").onChange(change);
+        datGui.add(gui, "panSpeed", 0.1, 5).name("位置移动速度").onChange(change);
+        datGui.add(gui, "screenSpacePanning").name("改为窗口移动").onChange(change);
+        datGui.add(gui, "keyPanSpeed", 1.0, 20).name("键盘控制速度").onChange(change);
+        datGui.add(gui, "autoRotate").name("自动旋转").onChange(change);
+        datGui.add(gui, "autoRotateSpeed", 0.5, 10).name("自动旋转速度").onChange(change);
+        datGui.add(gui, "enableKeys").name("开启键盘控制").onChange(change);
+
+        function change() {
+            for(var i in gui){
+                control[i] = gui[i];
+            }
+        }
     }
 
     function initLight() {

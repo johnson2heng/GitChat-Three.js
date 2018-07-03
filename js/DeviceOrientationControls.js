@@ -27,8 +27,6 @@ THREE.DeviceOrientationControls = function ( object ) {
 
 	var onScreenOrientationChangeEvent = function () {
 
-		console.log(window.orientation);
-
 		scope.screenOrientation = window.orientation || 0;
 
 	};

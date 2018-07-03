@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>精灵案例</title>
+    <title>OrbitControls控制器案例</title>
     <style type="text/css">
         html, body {
             margin: 0;
@@ -19,10 +19,11 @@
 
 </body>
 <script src="../js/three.js"></script>
+<script src="../js/OrbitControls.js"></script>
 <script src="../js/stats.min.js"></script>
 <script src="../js/dat.gui.min.js"></script>
 <script>
-    var renderer, camera, scene, gui, stats, ambientLight, directionalLight;
+    var renderer, camera, scene, gui, stats, ambientLight, directionalLight, control;
 
     function initRender() {
         renderer = new THREE.WebGLRenderer({antialias: true});
@@ -93,7 +94,7 @@
         scene.add(sphere);
 
         //添加一个精灵 使用了将canvas生成img的src导入的方式
-        var spriteMap = new THREE.TextureLoader().load(drawCanvas({text: "球", width: 64, height: 64}).toDataURL());
+        var spriteMap = new THREE.TextureLoader().load(drawCanvas({text:"球", width:64, height:64}).toDataURL());
         var spriteMaterial = new THREE.SpriteMaterial({map: spriteMap, color: 0xffffff});
         var sprite = new THREE.Sprite(spriteMaterial);
         sprite.position.set(0, 10, 0); //设置位置
@@ -110,7 +111,7 @@
         scene.add(cube);
 
         //添加一个精灵
-        var canvas = drawCanvas({text: "立方体", width: 256, height: 64});
+        var canvas = drawCanvas({text:"立方体", width:256, height:64});
         var spriteMapCube = new THREE.Texture(canvas);
         spriteMapCube.wrapS = THREE.RepeatWrapping;
         spriteMapCube.wrapT = THREE.RepeatWrapping;
@@ -154,107 +155,68 @@
     }
 
     function initControl() {
-        var dom = renderer.domElement;
-        //鼠标按下时获取到当前相机的位置，并求出当前相机距离原点的位置
-        var distance; //相机距离中心点的距离
-        var pan, tilt; //相机的水平角度和垂直角度
-        var downX, downY; //鼠标按下时的xy坐标
-        var matrix = new THREE.Matrix4(); //声明一个旋转矩阵
 
-        //绑定按下事件
-        dom.addEventListener("mousedown", function (e) {
-            distance = computeDistance(camera.position, new THREE.Vector3());
-            computePanTilt(camera.position);
+        control = new THREE.OrbitControls(camera, renderer.domElement);
 
-            downX = e.clientX;
-            downY = e.clientY;
+        // 是否开启当前的控制器 默认值为true
+        control.enabled = true;
 
-            //绑定移动事件
-            document.addEventListener("mousemove", move);
+        // 设置当前控制器的焦点 默认为原点位置
+        control.target = new THREE.Vector3();
 
-            //绑定鼠标抬起事件
-            document.addEventListener("mouseup", up);
-        });
+        // 控制器控制相机可移动的距离焦点的最远距离和最近距离 默认值是0到无限远的距离 此属性适用于透视相机 PerspectiveCamera
+        control.minDistance = 0;
+        control.maxDistance = Infinity;
 
-        //鼠标移动事件
-        function move(e) {
-            var moveX = e.clientX;
-            var moveY = e.clientY;
+        // 控制器控制相机可移动的距离焦点的最远距离和最近距离 默认值是0到无限远的距离 此属性适用于正交相机 OrthographicCamera
+        control.minZoom = 0;
+        control.maxZoom = Infinity;
 
-            //计算鼠标的偏移量当前相机的pan和tilt
-            var offsetX = moveX - downX;
-            var offsetY = moveY - downY;
+        // 相机垂直方向移动的弧度，默认从顶部九十度到底部九十度 默认值是0和Math.PI
+        control.minPolarAngle = 0; // 弧度
+        control.maxPolarAngle = Math.PI; // 弧度
 
-            var movePan = pan - offsetX / 3;
-            var moveTilt = tilt - offsetY;
+        // 当前相机水平位置下在焦点的z轴正方向可以偏转的弧度，默认无限旋转。
+        // 如果不可以无限旋转，只能够从左方和右方旋转180度，可以设置成minAzimuthAngle = - Math.PI maxAzimuthAngle = Math.PI
+        control.minAzimuthAngle = - Infinity; // 弧度
+        control.maxAzimuthAngle = Infinity; // 弧度
 
-            //tilt的移动范围是90到-90度
-            if (moveTilt >= 90) {
-                moveTilt = 89.99;
-            }
+        // 是否开启拖拽后的惯性（停止拖拽后，相机会慢慢停下来），如果开启了当前的属性，还需要在动画循环中调用相机的update()更新位置
+        control.enableDamping = false;
+        control.dampingFactor = 0.25; //设置当前的惯性的阻力，值越小阻力越小
 
-            if (moveTilt <= -90) {
-                moveTilt = -89.99;
-            }
+        // 设置控制器是否缩放以及缩放速度
+        control.enableZoom = true;
+        control.zoomSpeed = 1.0;
 
-            //根据pan和tilt计算出当前的相机应该所在的位置
-            var p = computePosition(distance, movePan, moveTilt);
-            camera.position.set(p.x, p.y, p.z);
-            camera.lookAt(new THREE.Vector3());
-        }
+        // 设置控制器是否可以旋转以及旋转速度
+        control.enableRotate = true;
+        control.rotateSpeed = 1.0;
 
-        //鼠标抬起事件
-        function up() {
-            //清楚绑定事件
-            document.removeEventListener("mousemove", move);
-            document.removeEventListener("mouseup", up);
-        }
+        // 是否开启改变视角焦点中心以及移动视角中心的速度
+        control.enablePan = true;
+        control.panSpeed = 1.0;
+        control.screenSpacePanning = false; // 移动相机位置焦点默认是修改x轴和z轴方向，如果将此值修改为true，焦点位置将修改x轴和y轴方向
+        control.keyPanSpeed = 7.0;	// 修改焦点位置移动的速度
 
-        //计算两点位置的距离
-        function computeDistance(vec1, vec2) {
-            return vec1.distanceTo(vec2);
-        }
+        // 设置当前是否自动旋转
+        control.autoRotate = false;
+        control.autoRotateSpeed = 2.0; // 默认速度为30秒旋转一周的速度，一秒60帧的情况下
 
-        //根据当前点到原点的线计算出到原点z轴正方向的pan和tilt的偏移量
-        function computePanTilt(position) {
-            //首先计算水平的偏移角度
-            pan = new THREE.Vector3(position.x, 0, position.z).angleTo(new THREE.Vector3(0, 0, 1));
+        // 是否开启键盘控制
+        control.enableKeys = true;
 
-            pan = pan / Math.PI * 180;
-            if (position.x < 0) {
-                pan = 360 - pan;
-            }
+        // 控制焦点的位置偏移的键盘按键 默认是上下左右键的 keyCode
+        control.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };
 
-            //计算垂直的偏移角度
-            tilt = new THREE.Vector3(position.x, 0, position.z).angleTo(position);
-
-            tilt = tilt / Math.PI * 180;
-            if (position.y > 0) {
-                tilt = -tilt;
-            }
-        }
-
-        //根据pan和tilt 相机到原点的距离计算出相机当前所在的位置
-        function computePosition(distance, pan, tilt) {
-            //重置旋转矩阵
-            matrix.identity();
-
-            var v = new THREE.Vector3(0, 0, distance);
-
-            //根据pan和tilt修改旋转矩阵，注意顶点旋转计算需要按照xyz的顺序旋转
-
-            matrix.makeRotationX(tilt / 180 * Math.PI);
-            v.applyMatrix4(matrix);
-
-            matrix.makeRotationY(pan / 180 * Math.PI);
-            v.applyMatrix4(matrix);
-
-            //计算出当前相机的位置
-            return v;
-        }
+        // 控制相机控制器的鼠标按键设置 默认左键旋转，中键缩放，右键移动焦点位置
+        control.mouseButtons = { ORBIT: THREE.MOUSE.LEFT, ZOOM: THREE.MOUSE.MIDDLE, PAN: THREE.MOUSE.RIGHT };
     }
 
     function render() {
+
+        control.update();
+
         renderer.render(scene, camera);
     }
 

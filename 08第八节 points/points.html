@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>精灵案例</title>
+    <title>粒子案例</title>
     <style type="text/css">
         html, body {
             margin: 0;
@@ -78,11 +78,11 @@
     function initModel() {
 
         //创建一个最普通的精灵
-        var spriteMaterial = new THREE.SpriteMaterial({color: 0x00ffff});
-        var sprite = new THREE.Sprite(spriteMaterial);
-        sprite.position.set(-30, 10, 0); //设置位置
-        sprite.scale.set(5, 5, 1); //设置scale进行大小设置
-        scene.add(sprite);
+        var spriteMaterialNormal = new THREE.SpriteMaterial({color: 0x00ffff});
+        var spriteNormal = new THREE.Sprite(spriteMaterialNormal);
+        spriteNormal.position.set(-30, 10, 0); //设置位置
+        spriteNormal.scale.set(5, 5, 1); //设置scale进行大小设置
+        scene.add(spriteNormal);
 
         //球体
         var sphereGeometry = new THREE.SphereGeometry(5, 24, 16);
@@ -91,7 +91,7 @@
         scene.add(sphere);
 
         //添加一个精灵 使用了将canvas生成img的src导入的方式
-        var spriteMap = new THREE.TextureLoader().load(drawCanvas({text: "球"}).toDataURL());
+        var spriteMap = new THREE.TextureLoader().load(drawCanvas({text:"球", width:64, height:64}).toDataURL());
         var spriteMaterial = new THREE.SpriteMaterial({map: spriteMap, color: 0xffffff});
         var sprite = new THREE.Sprite(spriteMaterial);
         sprite.position.set(0, 10, 0); //设置位置
@@ -109,17 +109,17 @@
         scene.add(cube);
 
         //添加一个精灵
-        var canvas = drawCanvas({text: "立方体", drawWidth: 1536, canvasWidth: 1536});
-        setTimeout(function () {
-            spriteMap.needsUpdate = true;
-        });
-        var spriteMap = new THREE.Texture(canvas);
-        var spriteMaterial = new THREE.SpriteMaterial({map: spriteMap, color: 0xffffff});
-        var sprite = new THREE.Sprite(spriteMaterial);
-        sprite.position.set(30, 10, -5); //设置位置
-        sprite.scale.set(15, 5, 1); //设置scale进行大小设置
-        sprite.center.set(0.5, 0); //设置位置点处于精灵的最下方中间位置
-        scene.add(sprite);
+        var canvas = drawCanvas({text:"立方体", width:256, height:64});
+        var spriteMapCube = new THREE.Texture(canvas);
+        spriteMapCube.wrapS = THREE.RepeatWrapping;
+        spriteMapCube.wrapT = THREE.RepeatWrapping;
+        spriteMapCube.needsUpdate = true;
+
+        var spriteCube = new THREE.Sprite(new THREE.SpriteMaterial({map: spriteMapCube, color: 0xffffff}));
+        spriteCube.position.set(30, 10, -5); //设置位置
+        spriteCube.scale.set(20, 5, 1); //设置scale进行大小设置
+        spriteCube.center.set(0.5, 0); //设置位置点处于精灵的最下方中间位置
+        scene.add(spriteCube);
 
         //底部平面
         var planeGeometry = new THREE.PlaneGeometry(100, 100);
@@ -151,86 +151,16 @@
 
     //创建canvas对象
     function drawCanvas(options) {
-        //有时候设置的文字显示不全，需要仔细摸索行高，和绘制起始y坐标和字体大小之间的关系 更简单粗暴的就是下面canvas.height 赋值的时候多赋值点
-        var settings = {
-            canvas: document.createElement("canvas"), //canvas对象，必填，不填写默认创建一个canvas
-            canvasWidth: 512, //canvas的宽度
-            canvasMinHeight: 512, //canvas的最小高度,如果不需要可以设置为0
-            drawStartX: 10, //绘制字符串起始x坐标
-            drawStartY: 15, //绘制字符串起始y坐标
-            lineHeight: 30, //文字的行高
-            font: "512px 'Microsoft Yahei'", //文字样式
-            text: "请修改掉默认的配置", //需要绘制的文本
-            drawWidth: 512, //文字显示的宽度
-            color: "#ffffff", //文字的颜色
-            backgroundColor: "rgba(0, 0, 0, 0)" //背景颜色
-        };
-        //将传入的配置覆盖掉默认配置
-        if (!!options && typeof options === "object") {
-            for (var i in options) {
-                settings[i] = options[i];
-            }
-        }
-        //获取2d的上线文开始设置相关属性
-        var canvas = settings.canvas;
-        canvas.width = settings.canvasWidth;
-        var ctx = canvas.getContext("2d");
-        //绘制文字
-        ctx.font = settings.font;
-        ctx.fillStyle = settings.color;
-        var lineWidth = 0; //当前行的绘制的宽度
-        var lastTextIndex = 0; //已经绘制上canvas最后的一个字符的下标
-        //由于改变canvas 的高度会导致绘制的纹理被清空，所以，不预先绘制，先放入到一个数组当中
-        var arr = [];
-        for (var i = 0; i < settings.text.length; i++) {
-            //获取当前的截取的字符串的宽度
-            lineWidth = ctx.measureText(settings.text.substr(lastTextIndex, i - lastTextIndex)).width;
+        let canvas = document.createElement("canvas");
+        canvas.width = options.width;
+        canvas.height = options.height;
 
-            if (lineWidth > settings.drawWidth) {
-                //判断最后一位是否是标点符号
-                if (judgePunctuationMarks(settings.text[i - 1])) {
-                    arr.push(settings.text.substr(lastTextIndex, i - lastTextIndex));
-                    lastTextIndex = i;
-                } else {
-                    arr.push(settings.text.substr(lastTextIndex, i - lastTextIndex - 1));
-                    lastTextIndex = i - 1;
-                }
-            }
-            //将最后多余的一部分添加到数组
-            if (i === settings.text.length - 1) {
-                arr.push(settings.text.substr(lastTextIndex, i - lastTextIndex + 1));
-            }
-        }
-        //根据arr的长度设置canvas的高度
-        canvas.height = arr.length * settings.lineHeight;
-        //判断是否达到最小高度
-        if (canvas.height < settings.canvasMinHeight) {
-            //重新设置起始位置
-            settings.drawStartY += (settings.canvasMinHeight - canvas.height) / 2;
-            canvas.height = settings.canvasMinHeight;
-        }
-        //绘制背景色
-        ctx.fillStyle = settings.backgroundColor;
+        let ctx = canvas.getContext("2d");
+        ctx.fillStyle = "rgba(0, 0, 0, 0)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        //设置字体颜色
-        ctx.font = settings.font;
-        ctx.textBaseline = "middle";
-        ctx.fillStyle = settings.color;
-        for (var i = 0; i < arr.length; i++) {
-            ctx.fillText(arr[i], settings.drawStartX, settings.drawStartY + i * settings.lineHeight);
-        }
-
-        //判断是否是需要避开的标签符号
-        function judgePunctuationMarks(value) {
-            var arr = [".", ",", ";", "?", "!", ":", "\"", "，", "。", "？", "！", "；", "：", "、"];
-            for (var i = 0; i < arr.length; i++) {
-                if (value === arr[i]) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
+        ctx.font = "60px Verdana";
+        ctx.fillStyle = "#fff";
+        ctx.fillText(options.text, 0, 56, options.width);
         return canvas;
     }
 

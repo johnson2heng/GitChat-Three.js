@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>精灵案例</title>
+    <title>TrackballControls控制器案例</title>
     <style type="text/css">
         html, body {
             margin: 0;
@@ -19,10 +19,11 @@
 
 </body>
 <script src="../js/three.js"></script>
+<script src="../js/TrackballControls.js"></script>
 <script src="../js/stats.min.js"></script>
 <script src="../js/dat.gui.min.js"></script>
 <script>
-    var renderer, camera, scene, gui, stats, ambientLight, directionalLight;
+    var renderer, camera, scene, gui, stats, ambientLight, directionalLight, control;
 
     function initRender() {
         renderer = new THREE.WebGLRenderer({antialias: true});
@@ -93,7 +94,7 @@
         scene.add(sphere);
 
         //添加一个精灵 使用了将canvas生成img的src导入的方式
-        var spriteMap = new THREE.TextureLoader().load(drawCanvas({text: "球", width: 64, height: 64}).toDataURL());
+        var spriteMap = new THREE.TextureLoader().load(drawCanvas({text:"球", width:64, height:64}).toDataURL());
         var spriteMaterial = new THREE.SpriteMaterial({map: spriteMap, color: 0xffffff});
         var sprite = new THREE.Sprite(spriteMaterial);
         sprite.position.set(0, 10, 0); //设置位置
@@ -110,7 +111,7 @@
         scene.add(cube);
 
         //添加一个精灵
-        var canvas = drawCanvas({text: "立方体", width: 256, height: 64});
+        var canvas = drawCanvas({text:"立方体", width:256, height:64});
         var spriteMapCube = new THREE.Texture(canvas);
         spriteMapCube.wrapS = THREE.RepeatWrapping;
         spriteMapCube.wrapT = THREE.RepeatWrapping;
@@ -154,107 +155,35 @@
     }
 
     function initControl() {
-        var dom = renderer.domElement;
-        //鼠标按下时获取到当前相机的位置，并求出当前相机距离原点的位置
-        var distance; //相机距离中心点的距离
-        var pan, tilt; //相机的水平角度和垂直角度
-        var downX, downY; //鼠标按下时的xy坐标
-        var matrix = new THREE.Matrix4(); //声明一个旋转矩阵
 
-        //绑定按下事件
-        dom.addEventListener("mousedown", function (e) {
-            distance = computeDistance(camera.position, new THREE.Vector3());
-            computePanTilt(camera.position);
+        control = new THREE.TrackballControls(camera, renderer.domElement);
 
-            downX = e.clientX;
-            downY = e.clientY;
+        // 是否开启当前的控制器 默认值为true
+        control.enabled = true;
 
-            //绑定移动事件
-            document.addEventListener("mousemove", move);
+        // 设置当前控制器的焦点 默认为原点位置
+        control.target = new THREE.Vector3();
 
-            //绑定鼠标抬起事件
-            document.addEventListener("mouseup", up);
-        });
+        control.rotateSpeed = 3.0; //控制相机旋转速度
+        control.zoomSpeed = 1.2; //控制相机缩放速度
+        control.panSpeed = 0.3; //控制相机移动速度
 
-        //鼠标移动事件
-        function move(e) {
-            var moveX = e.clientX;
-            var moveY = e.clientY;
+        control.noRotate = false; //关闭相机旋转 默认false
+        control.noZoom = false; //关闭相机缩放 默认false
+        control.noPan = false; //关闭相机移动 默认false
 
-            //计算鼠标的偏移量当前相机的pan和tilt
-            var offsetX = moveX - downX;
-            var offsetY = moveY - downY;
+        control.staticMoving = false; //关闭惯性拖拽 默认值false
+        control.dynamicDampingFactor = 0.2; //设置惯性拖拽的阻力 默认值是0.2
 
-            var movePan = pan - offsetX / 3;
-            var moveTilt = tilt - offsetY;
-
-            //tilt的移动范围是90到-90度
-            if (moveTilt >= 90) {
-                moveTilt = 89.99;
-            }
-
-            if (moveTilt <= -90) {
-                moveTilt = -89.99;
-            }
-
-            //根据pan和tilt计算出当前的相机应该所在的位置
-            var p = computePosition(distance, movePan, moveTilt);
-            camera.position.set(p.x, p.y, p.z);
-            camera.lookAt(new THREE.Vector3());
-        }
-
-        //鼠标抬起事件
-        function up() {
-            //清楚绑定事件
-            document.removeEventListener("mousemove", move);
-            document.removeEventListener("mouseup", up);
-        }
-
-        //计算两点位置的距离
-        function computeDistance(vec1, vec2) {
-            return vec1.distanceTo(vec2);
-        }
-
-        //根据当前点到原点的线计算出到原点z轴正方向的pan和tilt的偏移量
-        function computePanTilt(position) {
-            //首先计算水平的偏移角度
-            pan = new THREE.Vector3(position.x, 0, position.z).angleTo(new THREE.Vector3(0, 0, 1));
-
-            pan = pan / Math.PI * 180;
-            if (position.x < 0) {
-                pan = 360 - pan;
-            }
-
-            //计算垂直的偏移角度
-            tilt = new THREE.Vector3(position.x, 0, position.z).angleTo(position);
-
-            tilt = tilt / Math.PI * 180;
-            if (position.y > 0) {
-                tilt = -tilt;
-            }
-        }
-
-        //根据pan和tilt 相机到原点的距离计算出相机当前所在的位置
-        function computePosition(distance, pan, tilt) {
-            //重置旋转矩阵
-            matrix.identity();
-
-            var v = new THREE.Vector3(0, 0, distance);
-
-            //根据pan和tilt修改旋转矩阵，注意顶点旋转计算需要按照xyz的顺序旋转
-
-            matrix.makeRotationX(tilt / 180 * Math.PI);
-            v.applyMatrix4(matrix);
-
-            matrix.makeRotationY(pan / 180 * Math.PI);
-            v.applyMatrix4(matrix);
-
-            //计算出当前相机的位置
-            return v;
-        }
+        // 控制器控制相机可移动的距离焦点的最远距离和最近距离 默认值是0到无限远的距离
+        control.minDistance = 0;
+        control.maxDistance = Infinity;
     }
 
     function render() {
+
+        control.update();
+
         renderer.render(scene, camera);
     }
 

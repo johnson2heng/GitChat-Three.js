@@ -49,15 +49,14 @@
       <file leaf-file-name="DeviceOrientationControls.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/09第九节 controls/DeviceOrientationControls.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="161" column="31" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="31" />
+            <state relative-caret-position="361">
+              <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
                 <element signature="e#156#216#0" />
                 <element signature="e#233#272#0" />
                 <element signature="n#body#0;n#html#0;n#!!top" />
                 <element signature="e#628#979#0" />
-                <element signature="e#1007#1208#0" />
                 <element signature="e#1235#1277#0" />
                 <element signature="e#1302#1440#0" />
                 <element signature="e#1467#2292#0" />
@@ -142,7 +141,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1932" />
@@ -232,12 +231,12 @@
       <workItem from="1529834401379" duration="8961000" />
       <workItem from="1529927885836" duration="456000" />
       <workItem from="1530535992879" duration="8029000" />
-      <workItem from="1530624607370" duration="5050000" />
+      <workItem from="1530624607370" duration="5679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59624000" />
+    <option name="totallyTimeSpent" value="60253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -658,15 +657,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/09第九节 controls/DeviceOrientationControls.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="161" column="31" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="31" />
+        <state relative-caret-position="361">
+          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
             <element signature="e#156#216#0" />
             <element signature="e#233#272#0" />
             <element signature="n#body#0;n#html#0;n#!!top" />
             <element signature="e#628#979#0" />
-            <element signature="e#1007#1208#0" />
             <element signature="e#1235#1277#0" />
             <element signature="e#1302#1440#0" />
             <element signature="e#1467#2292#0" />

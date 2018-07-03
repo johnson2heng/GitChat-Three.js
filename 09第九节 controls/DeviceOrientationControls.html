@@ -132,6 +132,24 @@
         plane.receiveShadow = true; //可以接收阴影
         scene.add(plane);
 
+        //创建一个星空的效果
+        var starsGeometry = new THREE.Geometry();
+        //生成一万个点的位置
+        for (var i = 0; i < 10000; i++) {
+
+            var star = new THREE.Vector3();
+            //THREE.Math.randFloatSpread 在区间内随机浮动* - 范围 / 2 *到* 范围 / 2 *内随机取值。
+            star.x = THREE.Math.randFloatSpread(2000);
+            star.y = THREE.Math.randFloatSpread(2000);
+            star.z = THREE.Math.randFloatSpread(2000);
+
+            starsGeometry.vertices.push(star);
+
+        }
+        var starsMaterial = new THREE.PointsMaterial({color: 0x888888});
+        var starField = new THREE.Points(starsGeometry, starsMaterial);
+        scene.add(starField);
+
     }
 
     //创建canvas对象

@@ -21,3 +21,7 @@
 8. 08第八节 points
 - 精灵的案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/08%E7%AC%AC%E5%85%AB%E8%8A%82%20points/sprite.html)
 - 粒子的案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/08%E7%AC%AC%E5%85%AB%E8%8A%82%20points/points.html)
+9. 09第九节 controls
+- OrbitControls控制器 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/09%E7%AC%AC%E4%B9%9D%E8%8A%82%20controls/OrbitControls.html)
+- TrackballControls控制器 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/09%E7%AC%AC%E4%B9%9D%E8%8A%82%20controls/TrackballControls.html)
+- DeviceOrientationControls控制器 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/09%E7%AC%AC%E4%B9%9D%E8%8A%82%20controls/DeviceOrientationControls.html)

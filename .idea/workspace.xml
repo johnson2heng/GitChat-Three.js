@@ -20,23 +20,13 @@
       <file leaf-file-name="DeviceOrientationControls.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/09第九节 controls/DeviceOrientationControls.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+            <state relative-caret-position="353">
+              <caret line="183" column="62" lean-forward="true" selection-start-line="183" selection-start-column="62" selection-end-line="183" selection-end-column="62" />
               <folding>
                 <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="e#156#216#0" />
-                <element signature="e#233#272#0" />
                 <element signature="n#body#0;n#html#0;n#!!top" />
-                <element signature="e#628#979#0" />
-                <element signature="e#1235#1277#0" />
-                <element signature="e#1467#2292#0" />
-                <element signature="e#2319#4744#0" />
-                <element signature="e#4796#5229#0" />
-                <element signature="e#5256#5338#0" />
-                <element signature="e#6144#6219#0" />
-                <element signature="e#6251#6430#0" />
-                <element signature="e#6455#6579#0" />
-                <element signature="e#6601#6841#0" />
+                <element signature="e#2672#5753#0" />
+                <element signature="e#5805#6238#0" />
               </folding>
             </state>
           </provider>
@@ -102,7 +92,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1932" />
@@ -113,7 +103,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,6 +129,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -198,11 +188,12 @@
       <workItem from="1529927885836" duration="456000" />
       <workItem from="1530535992879" duration="8029000" />
       <workItem from="1530624607370" duration="10533000" />
+      <workItem from="1530709756738" duration="90000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65107000" />
+    <option name="totallyTimeSpent" value="65197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -241,14 +232,23 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/09第九节 controls/DeviceOrientationControls.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#body#0;n#html#0;n#!!top" />
+            <element signature="e#2672#5753#0" />
+            <element signature="e#5805#6238#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/08第八节 points/sprite.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2014">
           <caret line="106" column="29" selection-end-line="363" selection-end-column="7" />
-          <folding>
-            <element signature="e#2241#4666#0" />
-            <element signature="e#4718#5151#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -270,11 +270,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5168">
           <caret line="272" column="34" selection-start-line="272" selection-start-column="34" selection-end-line="272" selection-end-column="34" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -483,28 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="7" column="59" lean-forward="true" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
-          <folding>
-            <element signature="e#1713#2301#0" />
-            <element signature="e#2343#2438#0" />
-            <element signature="e#2479#2733#0" />
-            <element signature="e#2778#3134#0" />
-            <element signature="e#3176#4732#0" />
-            <element signature="e#4771#5319#0" />
-            <element signature="e#5354#6084#0" />
-            <element signature="e#6126#6580#0" />
-            <element signature="e#6610#7137#0" />
-            <element signature="e#7166#7532#0" />
-            <element signature="e#8097#8225#0" />
-            <element signature="e#8256#9058#0" />
-            <element signature="e#9089#9600#0" />
-            <element signature="e#9629#9902#0" />
-            <element signature="e#9934#10459#0" />
-            <element signature="e#10491#11317#0" />
-            <element signature="e#11348#12063#0" />
-            <element signature="e#12093#12449#0" />
-            <element signature="e#12482#12556#0" />
-            <element signature="e#12586#13268#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -519,10 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="152" column="45" lean-forward="true" selection-start-line="152" selection-start-column="45" selection-end-line="152" selection-end-column="45" />
-          <folding>
-            <element signature="e#2241#4666#0" />
-            <element signature="e#4718#5151#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -551,10 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="70" column="46" lean-forward="true" selection-start-line="70" selection-start-column="46" selection-end-line="94" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -562,46 +527,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="76" column="27" lean-forward="true" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="e#139#199#0" />
-            <element signature="e#216#255#0" />
-            <element signature="n#body#0;n#html#0;n#!!top" />
-            <element signature="e#607#958#0" />
-            <element signature="e#986#1187#0" />
-            <element signature="e#1214#1256#0" />
-            <element signature="e#1446#2271#0" />
-            <element signature="e#2298#4635#0" />
-            <element signature="e#4687#7913#0" />
-            <element signature="e#7940#8022#0" />
-            <element signature="e#10056#10131#0" />
-            <element signature="e#10163#10342#0" />
-            <element signature="e#10367#10491#0" />
-            <element signature="e#10513#10753#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/09第九节 controls/DeviceOrientationControls.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        <state relative-caret-position="353">
+          <caret line="183" column="62" lean-forward="true" selection-start-line="183" selection-start-column="62" selection-end-line="183" selection-end-column="62" />
           <folding>
             <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="e#156#216#0" />
-            <element signature="e#233#272#0" />
             <element signature="n#body#0;n#html#0;n#!!top" />
-            <element signature="e#628#979#0" />
-            <element signature="e#1235#1277#0" />
-            <element signature="e#1467#2292#0" />
-            <element signature="e#2319#4744#0" />
-            <element signature="e#4796#5229#0" />
-            <element signature="e#5256#5338#0" />
-            <element signature="e#6144#6219#0" />
-            <element signature="e#6251#6430#0" />
-            <element signature="e#6455#6579#0" />
-            <element signature="e#6601#6841#0" />
+            <element signature="e#2672#5753#0" />
+            <element signature="e#5805#6238#0" />
           </folding>
         </state>
       </provider>

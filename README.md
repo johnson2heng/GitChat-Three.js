@@ -28,3 +28,10 @@
 - OrbitControls控制器 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/09%E7%AC%AC%E4%B9%9D%E8%8A%82%20controls/OrbitControls.html)
 - TrackballControls控制器 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/09%E7%AC%AC%E4%B9%9D%E8%8A%82%20controls/TrackballControls.html)
 - DeviceOrientationControls控制器 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/09%E7%AC%AC%E4%B9%9D%E8%8A%82%20controls/DeviceOrientationControls.html)
+
+10. 10第十节 Loader
+- ObjectLoader [点击这里](https://johnson2heng.github.io/GitChat-Three.js/10%E7%AC%AC%E5%8D%81%E8%8A%82%20loaders/ObjectLoader.html)
+- GLTFLoader [点击这里](https://johnson2heng.github.io/GitChat-Three.js/10%E7%AC%AC%E5%8D%81%E8%8A%82%20loaders/GLTFLoader.html)
+- FBXLoader [点击这里](https://johnson2heng.github.io/GitChat-Three.js/10%E7%AC%AC%E5%8D%81%E8%8A%82%20loaders/FBXLoader.html)
+- OBJLoader [点击这里](https://johnson2heng.github.io/GitChat-Three.js/10%E7%AC%AC%E5%8D%81%E8%8A%82%20loaders/OBJLoader.html)
+- ColladaLoader [点击这里](https://johnson2heng.github.io/GitChat-Three.js/10%E7%AC%AC%E5%8D%81%E8%8A%82%20loaders/ColladaLoader.html)

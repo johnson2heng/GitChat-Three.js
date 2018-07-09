@@ -91,6 +91,15 @@
         //创建collada加载器
         var loader = new THREE.ColladaLoader();
         loader.load('../js/models/collada/elf.dae', function (collada) {
+
+            //添加阴影
+            collada.scene.traverse(function (item) {
+                if(item instanceof THREE.Mesh){
+                    item.castShadow = true;
+                    item.receiveShadow = true;
+                }
+            });
+            //缩放
             collada.scene.scale.set(5,5,5);
             scene.add(collada.scene);
         });

@@ -101,6 +101,14 @@
             objLoader.setMaterials(material);
             objLoader.setPath('../js/models/obj/');
             objLoader.load('female02.obj', function (object) {
+                //添加阴影
+                object.traverse(function (item) {
+                    if(item instanceof THREE.Mesh){
+                        item.castShadow = true;
+                        item.receiveShadow = true;
+                    }
+                });
+                //缩放
                 object.scale.set(.3,.3,.3);
                 scene.add(object);
             })

@@ -17,20 +17,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ColladaLoader.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/10第十节 loaders/ColladaLoader.html">
+      <file leaf-file-name="ObjectLoader.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/10第十节 loaders/ObjectLoader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="342">
+              <caret line="70" column="40" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="40" />
+              <folding>
+                <element signature="n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="e#144#204#0" />
+                <element signature="e#221#260#0" />
+                <element signature="n#body#0;n#html#0;n#!!top" />
+                <element signature="e#673#1024#0" />
+                <element signature="e#1052#1253#0" />
+                <element signature="e#1280#1322#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OBJLoader.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/10第十节 loaders/OBJLoader.html">
+      <file leaf-file-name="GLTFLoader.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/10第十节 loaders/GLTFLoader.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+            <state relative-caret-position="19">
+              <caret line="76" column="36" selection-end-line="148" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -87,8 +97,10 @@
         <option value="$PROJECT_DIR$/09第九节 controls/ediater.html" />
         <option value="$PROJECT_DIR$/10第十节 loaders/GLTFLoader.html" />
         <option value="$PROJECT_DIR$/10第十节 loaders/FBXLoader.html" />
-        <option value="$PROJECT_DIR$/10第十节 loaders/ColladaLoader.html" />
         <option value="$PROJECT_DIR$/10第十节 loaders/OBJLoader.html" />
+        <option value="$PROJECT_DIR$/10第十节 loaders/ColladaLoader.html" />
+        <option value="$PROJECT_DIR$/js/models/json/file.json" />
+        <option value="$PROJECT_DIR$/10第十节 loaders/JSONLoader.html" />
       </list>
     </option>
   </component>
@@ -103,15 +115,15 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1050" />
+    <option name="y" value="-8" />
+    <option name="width" value="1932" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -133,24 +145,26 @@
               <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="loaders" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="json" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../three.js-v92" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shjj_bpms_portal" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -158,16 +172,16 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\work\github\GitChat-Three.js\js\controls" />
+      <recent name="D:\work\github\GitChat-Three.js\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\github\GitChat-Three.js\js\models\json" />
       <recent name="D:\work\github\GitChat-Three.js\10第十节 loaders" />
       <recent name="D:\work\github\GitChat-Three.js\js\models\collada" />
       <recent name="D:\work\github\GitChat-Three.js\js\models\obj" />
       <recent name="D:\work\github\GitChat-Three.js\js\loaders" />
-      <recent name="D:\work\github\GitChat-Three.js\js" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\work\github\GitChat-Three.js\js\controls" />
-      <recent name="D:\work\github\GitChat-Three.js\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -206,17 +220,21 @@
       <workItem from="1530624607370" duration="10533000" />
       <workItem from="1530709756738" duration="4449000" />
       <workItem from="1530790764666" duration="7728000" />
+      <workItem from="1530880262169" duration="516000" />
+      <workItem from="1530974771679" duration="692000" />
+      <workItem from="1531019481342" duration="8416000" />
+      <workItem from="1531136373493" duration="3599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77284000" />
+    <option name="totallyTimeSpent" value="90507000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24841438" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24788584" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -245,24 +263,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/07第七节 camera/control.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2793">
-          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/08第八节 points/sprite.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1805">
-          <caret line="95" column="42" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/three.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595726">
@@ -419,10 +423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="152" column="45" lean-forward="true" selection-start-line="152" selection-start-column="45" selection-end-line="152" selection-end-column="45" />
-          <folding>
-            <element signature="e#2241#4666#0" />
-            <element signature="e#4718#5151#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -444,24 +444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="76" column="27" lean-forward="true" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="e#139#199#0" />
-            <element signature="e#216#255#0" />
-            <element signature="n#body#0;n#html#0;n#!!top" />
-            <element signature="e#607#958#0" />
-            <element signature="e#986#1187#0" />
-            <element signature="e#1214#1256#0" />
-            <element signature="e#1446#2271#0" />
-            <element signature="e#2298#4635#0" />
-            <element signature="e#4687#7913#0" />
-            <element signature="e#7940#8022#0" />
-            <element signature="e#10056#10131#0" />
-            <element signature="e#10163#10342#0" />
-            <element signature="e#10367#10491#0" />
-            <element signature="e#10513#10753#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -478,29 +460,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="384" selection-start-line="384" selection-end-line="384" />
-          <folding>
-            <element signature="e#1713#2301#0" />
-            <element signature="e#2343#2438#0" />
-            <element signature="e#2479#2733#0" />
-            <element signature="e#2778#3134#0" />
-            <element signature="e#3176#4732#0" />
-            <element signature="e#4771#5319#0" />
-            <element signature="e#5354#6084#0" />
-            <element signature="e#6126#6580#0" />
-            <element signature="e#6610#7137#0" />
-            <element signature="e#7166#7532#0" />
-            <element signature="e#7577#8101#0" />
-            <element signature="e#8128#8256#0" />
-            <element signature="e#8287#9089#0" />
-            <element signature="e#9120#9631#0" />
-            <element signature="e#9660#9933#0" />
-            <element signature="e#9965#10490#0" />
-            <element signature="e#10522#11348#0" />
-            <element signature="e#11379#12094#0" />
-            <element signature="e#12124#12480#0" />
-            <element signature="e#12513#12587#0" />
-            <element signature="e#12617#13299#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -508,111 +467,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#234#0" />
-            <element signature="e#236#311#0" />
-            <element signature="e#1153#1213#0" />
-            <element signature="e#1329#1391#0" />
-            <element signature="e#1561#1603#0" />
-            <element signature="e#1745#1841#0" />
-            <element signature="e#2227#2283#0" />
-            <element signature="e#2870#2872#0" />
-            <element signature="e#2931#2961#0" />
-            <element signature="e#3002#3034#0" />
-            <element signature="e#3067#3195#0" />
-            <element signature="e#3592#6047#0" />
-            <element signature="e#3929#6042#0" />
-            <element signature="e#4232#4282#0" />
-            <element signature="e#5234#5412#0" />
-            <element signature="e#5418#5492#0" />
-            <element signature="e#5512#5535#0" />
-            <element signature="e#5827#6019#0" />
-            <element signature="e#6080#6810#0" />
-            <element signature="e#6814#6816#0" />
-            <element signature="e#7700#7762#0" />
-            <element signature="e#7789#7839#0" />
-            <element signature="e#7871#7910#0" />
-            <element signature="e#7940#7977#0" />
-            <element signature="e#8006#8241#0" />
-            <element signature="e#8093#8236#0" />
-            <element signature="e#8271#8627#0" />
-            <element signature="e#8356#8622#0" />
-            <element signature="e#8403#8457#0" />
-            <element signature="e#8463#8559#0" />
-            <element signature="e#8720#10018#0" />
-            <element signature="e#8800#10013#0" />
-            <element signature="e#8938#9478#0" />
-            <element signature="e#9525#9814#0" />
-            <element signature="e#9820#10008#0" />
-            <element signature="e#10055#10511#0" />
-            <element signature="e#10100#10131#0" />
-            <element signature="e#10178#10359#0" />
-            <element signature="e#10365#10507#0" />
-            <element signature="e#10546#11002#0" />
-            <element signature="e#10591#10622#0" />
-            <element signature="e#10669#10850#0" />
-            <element signature="e#10856#10998#0" />
-            <element signature="e#11005#11007#0" />
-            <element signature="e#11100#11202#0" />
-            <element signature="e#11244#11344#0" />
-            <element signature="e#11384#11480#0" />
-            <element signature="e#11523#12133#0" />
-            <element signature="e#12175#12507#0" />
-            <element signature="e#12347#12384#0" />
-            <element signature="e#12414#12452#0" />
-            <element signature="e#12547#12799#0" />
-            <element signature="e#12834#12877#0" />
-            <element signature="e#12915#13113#0" />
-            <element signature="e#12985#13023#0" />
-            <element signature="e#13053#13090#0" />
-            <element signature="e#13148#13590#0" />
-            <element signature="e#13190#13586#0" />
-            <element signature="e#13634#13759#0" />
-            <element signature="e#13805#14317#0" />
-            <element signature="e#13882#14105#0" />
-            <element signature="e#14132#14313#0" />
-            <element signature="e#14360#14992#0" />
-            <element signature="e#15037#15848#0" />
-            <element signature="e#15113#15477#0" />
-            <element signature="e#15504#15825#0" />
-            <element signature="e#15884#15927#0" />
-            <element signature="e#15930#15932#0" />
-            <element signature="e#16029#16805#0" />
-            <element signature="e#16103#16597#0" />
-            <element signature="e#16629#16801#0" />
-            <element signature="e#16838#17289#0" />
-            <element signature="e#16912#17285#0" />
-            <element signature="e#17320#17584#0" />
-            <element signature="e#17618#17907#0" />
-            <element signature="e#17938#18071#0" />
-            <element signature="e#18105#18719#0" />
-            <element signature="e#18179#18638#0" />
-            <element signature="e#18670#18715#0" />
-            <element signature="e#18752#19382#0" />
-            <element signature="e#18853#19378#0" />
-            <element signature="e#19414#19548#0" />
-            <element signature="e#19583#19657#0" />
-            <element signature="e#20419#20554#0" />
-            <element signature="e#20441#20550#0" />
-            <element signature="e#20594#20916#0" />
-            <element signature="e#20616#20749#0" />
-            <element signature="e#20778#20912#0" />
-            <element signature="e#20930#21264#0" />
-            <element signature="e#20952#21091#0" />
-            <element signature="e#21120#21260#0" />
-            <element signature="e#21275#21591#0" />
-            <element signature="e#21297#21427#0" />
-            <element signature="e#21456#21587#0" />
-            <element signature="e#21603#21925#0" />
-            <element signature="e#21625#21758#0" />
-            <element signature="e#21787#21921#0" />
-            <element signature="e#21943#22289#0" />
-            <element signature="e#21965#22110#0" />
-            <element signature="e#22139#22285#0" />
-            <element signature="e#22315#22667#0" />
-            <element signature="e#22337#22485#0" />
-            <element signature="e#22514#22663#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -620,12 +474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1615">
           <caret line="183" column="62" selection-start-line="183" selection-start-column="62" selection-end-line="183" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#body#0;n#html#0;n#!!top" />
-            <element signature="e#2672#5753#0" />
-            <element signature="e#5805#6238#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -633,10 +481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="64" column="29" lean-forward="true" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -662,27 +506,7 @@
     <entry file="file://$PROJECT_DIR$/js/loaders/inflate.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/10第十节 loaders/FBXLoader.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10第十节 loaders/GLTFLoader.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="92" column="34" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/models/obj/Elf01_posed.mtl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/models/obj/Elf01_posed.mtl" />
     <entry file="file://$PROJECT_DIR$/js/loaders/MTLLoader.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -695,15 +519,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/10第十节 loaders/ColladaLoader.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="19">
+          <caret line="95" column="52" selection-start-line="95" selection-start-column="52" selection-end-line="95" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/10第十节 loaders/OBJLoader.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+        <state relative-caret-position="19">
+          <caret line="102" column="62" selection-start-line="102" selection-start-column="62" selection-end-line="110" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10第十节 loaders/FBXLoader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="790">
+          <caret line="95" column="15" lean-forward="true" selection-start-line="95" selection-start-column="15" selection-end-line="100" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/models/json/file.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="287" column="9" selection-start-line="287" selection-start-column="3" selection-end-line="287" selection-end-column="9" />
+          <folding>
+            <element signature="e#116#273#0" />
+            <element signature="e#290#6941#0" />
+            <element signature="n#!!block;n#object#0;n#!!top" />
+            <element signature="e#7065#7215#0" />
+            <element signature="e#7233#22358#0" />
+            <element signature="e#7341#7610#0" />
+            <element signature="e#7746#8240#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10第十节 loaders/GLTFLoader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="76" column="36" selection-end-line="148" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10第十节 loaders/ObjectLoader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="70" column="40" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="40" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="e#144#204#0" />
+            <element signature="e#221#260#0" />
+            <element signature="n#body#0;n#html#0;n#!!top" />
+            <element signature="e#673#1024#0" />
+            <element signature="e#1052#1253#0" />
+            <element signature="e#1280#1322#0" />
+          </folding>
         </state>
       </provider>
     </entry>

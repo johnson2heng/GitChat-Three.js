@@ -29,17 +29,16 @@
     var mixer, clock = new THREE.Clock();
 
     function initRender() {
-        renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer = new THREE.WebGLRenderer({antialias: true, logarithmicDepthBuffer: true});
         renderer.setSize(window.innerWidth, window.innerHeight);
         //告诉渲染器需要阴影效果
         renderer.shadowMap.enabled = true;
-        renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 默认的是，没有设置的这个清晰 THREE.PCFShadowMap
         document.body.appendChild(renderer.domElement);
     }
 
     function initCamera() {
         camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 100, 200);
+        camera.position.set(0, 50, 100);
         camera.lookAt(new THREE.Vector3(0, 0, 0));
         scene.add(camera);
     }
@@ -94,8 +93,18 @@
         //创建gltf加载器
         var loader = new THREE.GLTFLoader();
         loader.load('../js/models/gltf/marie/scene.gltf', function (gltf) {
-            gltf.scene.scale.set(.1,.1,.1);
-            //gltf.scene.rotation.x = Math.PI;
+
+            console.log(gltf);
+
+            gltf.scene.scale.set(.1, .1, .1);
+
+            gltf.scene.traverse(function (child) {
+                if (child.isMesh) {
+                    child.frustumCulled = false;
+                    child.castShadow = true;
+                }
+            });
+
             scene.add(gltf.scene);
 
             var obj = gltf.scene; //获取到模型对象

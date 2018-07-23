@@ -38,7 +38,7 @@
 
     function initCamera() {
         camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 100, 200);
+        camera.position.set(0, 50, 100);
         camera.lookAt(new THREE.Vector3(0, 0, 0));
     }
 
@@ -98,6 +98,7 @@
             scene.add(mesh);
             mixer = new THREE.AnimationMixer(mesh);
             var clip = THREE.AnimationClip.CreateFromMorphTargetSequence('gallop', geometry.morphTargets, 30);
+            console.log(clip);
             mixer.clipAction(clip).setDuration(1).play();
         });
     }

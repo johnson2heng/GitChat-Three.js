@@ -20,10 +20,24 @@
       <file leaf-file-name="skeletonAnimation.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/11第十一节 animation/skeletonAnimation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="115" column="50" lean-forward="true" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
+            <state relative-caret-position="570">
+              <caret line="115" column="12" selection-start-line="115" selection-start-column="12" selection-end-line="117" selection-end-column="58" />
               <folding>
                 <element signature="e#1582#2408#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="skeleton.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/11第十一节 animation/skeleton.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="19" />
+              <folding>
+                <element signature="e#1281#2450#0" />
+                <element signature="e#2477#2709#0" />
+                <element signature="e#2736#3399#0" />
               </folding>
             </state>
           </provider>
@@ -32,8 +46,8 @@
       <file leaf-file-name="morphAnimation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/11第十一节 animation/morphAnimation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+            <state relative-caret-position="399">
+              <caret line="91" column="71" lean-forward="true" selection-start-line="91" selection-start-column="71" selection-end-line="91" selection-end-column="71" />
               <folding>
                 <element signature="e#1456#2281#0" />
               </folding>
@@ -98,10 +112,10 @@
         <option value="$PROJECT_DIR$/js/models/json/file.json" />
         <option value="$PROJECT_DIR$/10第十节 loaders/JSONLoader.html" />
         <option value="$PROJECT_DIR$/11第十一节 animation/morphTargets.html" />
-        <option value="$PROJECT_DIR$/11第十一节 animation/skeleton.html" />
         <option value="$PROJECT_DIR$/js/models/json/horse.js" />
         <option value="$PROJECT_DIR$/10第十节 loaders/ObjectLoader.html" />
         <option value="$PROJECT_DIR$/11第十一节 animation/skeletonAnimation.html" />
+        <option value="$PROJECT_DIR$/11第十一节 animation/skeleton.html" />
         <option value="$PROJECT_DIR$/11第十一节 animation/morphAnimation.html" />
       </list>
     </option>
@@ -249,12 +263,12 @@
       <workItem from="1532149757224" duration="1854000" />
       <workItem from="1532178114908" duration="1204000" />
       <workItem from="1532230511011" duration="19493000" />
-      <workItem from="1532344988015" duration="7020000" />
+      <workItem from="1532344988015" duration="11008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125440000" />
+    <option name="totallyTimeSpent" value="129428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -531,18 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/11第十一节 animation/skeleton.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="158" column="32" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="32" />
-          <folding>
-            <element signature="e#1281#2450#0" />
-            <element signature="e#2477#2709#0" />
-            <element signature="e#2736#3399#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/models/json/naruto.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -559,10 +561,22 @@
     <entry file="file://$PROJECT_DIR$/js/models/gltf/marie/scene.bin">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/11第十一节 animation/skeleton.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="19" />
+          <folding>
+            <element signature="e#1281#2450#0" />
+            <element signature="e#2477#2709#0" />
+            <element signature="e#2736#3399#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/11第十一节 animation/morphAnimation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+        <state relative-caret-position="399">
+          <caret line="91" column="71" lean-forward="true" selection-start-line="91" selection-start-column="71" selection-end-line="91" selection-end-column="71" />
           <folding>
             <element signature="e#1456#2281#0" />
           </folding>
@@ -571,8 +585,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/11第十一节 animation/skeletonAnimation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="115" column="50" lean-forward="true" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
+        <state relative-caret-position="570">
+          <caret line="115" column="12" selection-start-line="115" selection-start-column="12" selection-end-line="117" selection-end-column="58" />
           <folding>
             <element signature="e#1582#2408#0" />
           </folding>

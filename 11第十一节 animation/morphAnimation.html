@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>JSON模型加载案例</title>
+    <title>JSON模型动画案例</title>
     <style type="text/css">
         html, body {
             margin: 0;
@@ -94,11 +94,11 @@
                 vertexColors: THREE.FaceColors,
                 morphTargets: true
             }));
+            mesh.castShadow = true;
             mesh.scale.set(0.1, 0.1, 0.1);
             scene.add(mesh);
             mixer = new THREE.AnimationMixer(mesh);
             var clip = THREE.AnimationClip.CreateFromMorphTargetSequence('gallop', geometry.morphTargets, 30);
-            console.log(clip);
             mixer.clipAction(clip).setDuration(1).play();
         });
     }

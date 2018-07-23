@@ -35,3 +35,9 @@
 - FBXLoader [点击这里](https://johnson2heng.github.io/GitChat-Three.js/10%E7%AC%AC%E5%8D%81%E8%8A%82%20loaders/FBXLoader.html)
 - OBJLoader [点击这里](https://johnson2heng.github.io/GitChat-Three.js/10%E7%AC%AC%E5%8D%81%E8%8A%82%20loaders/OBJLoader.html)
 - ColladaLoader [点击这里](https://johnson2heng.github.io/GitChat-Three.js/10%E7%AC%AC%E5%8D%81%E8%8A%82%20loaders/ColladaLoader.html)
+
+11. 11第十一节 animation
+- 变形实现动画 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/11%E7%AC%AC%E5%8D%81%E4%B8%80%E8%8A%82%20animation/morphTargets.html)
+- 骨骼动画实现案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/11%E7%AC%AC%E5%8D%81%E4%B8%80%E8%8A%82%20animation/skeleton.html)
+- JSON模型变形动画案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/11%E7%AC%AC%E5%8D%81%E4%B8%80%E8%8A%82%20animation/morphAnimation.html)
+- GLTF模型骨骼动画案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/11%E7%AC%AC%E5%8D%81%E4%B8%80%E8%8A%82%20animation/skeletonAnimation.html)

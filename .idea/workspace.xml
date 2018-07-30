@@ -26,13 +26,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="403" />
+          <entry key="html" value="410" />
           <entry key="js" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="403" />
+          <entry key="HTML" value="410" />
           <entry key="JavaScript" value="2" />
         </counts>
       </usages-collector>
@@ -266,7 +266,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/12第十二节 tween/simple.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="434">
@@ -283,11 +283,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/12第十二节 tween/repeat.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="19">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -477,12 +477,12 @@
       <workItem from="1532860763773" duration="2412000" />
       <workItem from="1532869825853" duration="599000" />
       <workItem from="1532871697692" duration="754000" />
-      <workItem from="1532951488028" duration="9063000" />
+      <workItem from="1532951488028" duration="9680000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145237000" />
+    <option name="totallyTimeSpent" value="145854000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -986,13 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/12第十二节 tween/repeat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/12第十二节 tween/simple.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -1005,6 +998,13 @@
             <element signature="e#6049#6173#0" />
             <element signature="e#6195#6435#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12第十二节 tween/repeat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
         </state>
       </provider>
     </entry>

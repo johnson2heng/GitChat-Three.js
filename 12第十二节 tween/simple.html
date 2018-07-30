@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Tween简单应用案例</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        canvas {
+            display: block;
+        }
+
+    </style>
+</head>
+<body onload="draw();">
+
+</body>
+<script src="../js/three.js"></script>
+<script src="../js/Tween.js"></script>
+<script src="../js/controls/OrbitControls.js"></script>
+<script src="../js/stats.min.js"></script>
+<script src="../js/dat.gui.min.js"></script>
+<script>
+    var renderer, camera, scene, gui, stats, ambientLight, directionalLight, control;
+    var tween;
+
+    function initRender() {
+        renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        //告诉渲染器需要阴影效果
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 默认的是，没有设置的这个清晰 THREE.PCFShadowMap
+        document.body.appendChild(renderer.domElement);
+    }
+
+    function initCamera() {
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 100, 200);
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+    }
+
+    function initScene() {
+        scene = new THREE.Scene();
+    }
+
+    function initGui() {
+        //声明一个保存需求修改的相关数据的对象
+        gui = {
+            start:function () {
+                tween.start();
+            }
+        };
+
+        var datGui = new dat.GUI();
+        //将设置属性添加到gui当中，gui.add(对象，属性，最小值，最大值）
+        datGui.add(gui, "start").name("开始动画");
+    }
+
+    function initLight() {
+        ambientLight = new THREE.AmbientLight("#111111");
+        scene.add(ambientLight);
+
+        directionalLight = new THREE.DirectionalLight("#ffffff");
+        directionalLight.position.set(40, 60, 10);
+
+        directionalLight.shadow.camera.near = 1; //产生阴影的最近距离
+        directionalLight.shadow.camera.far = 400; //产生阴影的最远距离
+        directionalLight.shadow.camera.left = -50; //产生阴影距离位置的最左边位置
+        directionalLight.shadow.camera.right = 50; //最右边
+        directionalLight.shadow.camera.top = 50; //最上边
+        directionalLight.shadow.camera.bottom = -50; //最下面
+
+        //这两个值决定生成阴影密度 默认512
+        directionalLight.shadow.mapSize.height = 1024;
+        directionalLight.shadow.mapSize.width = 1024;
+
+        //告诉平行光需要开启阴影投射
+        directionalLight.castShadow = true;
+
+        scene.add(directionalLight);
+    }
+
+    function initModel() {
+
+        //底部平面
+        var planeGeometry = new THREE.PlaneGeometry(100, 100);
+        var planeMaterial = new THREE.MeshLambertMaterial({color: 0xaaaaaa, side: THREE.DoubleSide});
+        var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        plane.rotation.x = -0.5 * Math.PI;
+        plane.position.y = -5.1;
+        plane.receiveShadow = true; //可以接收阴影
+        scene.add(plane);
+
+        //立方体
+        var cubeGeometry = new THREE.CubeGeometry(10, 10, 10);
+        var cubeMaterial = new THREE.MeshPhongMaterial({color: 0x00ffff});
+        var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+        cube.position.x = -40;
+        cube.position.z = -30;
+        cube.castShadow = true; //开启阴影
+        scene.add(cube);
+
+        //设置tween
+        var position = {x:-40, y:0, z:-30};
+        tween = new TWEEN.Tween(position);
+
+        //设置移动的目标和移动时间
+        tween.to({x:40, y:30, z:30}, 2000);
+
+        //设置每次更新的回调，然后修改几何体的位置
+        tween.onUpdate(function () {
+            cube.position.set(position.x, position.y, position.z);
+        });
+    }
+
+    function initStats() {
+        stats = new Stats();
+        document.body.appendChild(stats.dom);
+    }
+
+    function initControl() {
+
+        control = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // 是否开启当前的控制器 默认值为true
+        control.enabled = true;
+
+        // 设置当前控制器的焦点 默认为原点位置
+        control.target = new THREE.Vector3();
+
+        // 控制器控制相机可移动的距离焦点的最远距离和最近距离 默认值是0到无限远的距离 此属性适用于透视相机 PerspectiveCamera
+        control.minDistance = 0;
+        control.maxDistance = Infinity;
+
+        // 控制器控制相机可移动的距离焦点的最远距离和最近距离 默认值是0到无限远的距离 此属性适用于正交相机 OrthographicCamera
+        control.minZoom = 0;
+        control.maxZoom = Infinity;
+
+        // 相机垂直方向移动的弧度，默认从顶部九十度到底部九十度 默认值是0和Math.PI
+        control.minPolarAngle = 0; // 弧度
+        control.maxPolarAngle = Math.PI; // 弧度
+
+        // 当前相机水平位置下在焦点的z轴正方向可以偏转的弧度，默认无限旋转。
+        // 如果不可以无限旋转，只能够从左方和右方旋转180度，可以设置成minAzimuthAngle = - Math.PI maxAzimuthAngle = Math.PI
+        control.minAzimuthAngle = - Infinity; // 弧度
+        control.maxAzimuthAngle = Infinity; // 弧度
+
+        // 是否开启拖拽后的惯性（停止拖拽后，相机会慢慢停下来），如果开启了当前的属性，还需要在动画循环中调用相机的update()更新位置
+        control.enableDamping = false;
+        control.dampingFactor = 0.25; //设置当前的惯性的阻力，值越小阻力越小
+
+        // 设置控制器是否缩放以及缩放速度
+        control.enableZoom = true;
+        control.zoomSpeed = 1.0;
+
+        // 设置控制器是否可以旋转以及旋转速度
+        control.enableRotate = true;
+        control.rotateSpeed = 1.0;
+
+        // 是否开启改变视角焦点中心以及移动视角中心的速度
+        control.enablePan = true;
+        control.panSpeed = 1.0;
+        control.screenSpacePanning = false; // 移动相机位置焦点默认是修改x轴和z轴方向，如果将此值修改为true，焦点位置将修改x轴和y轴方向
+        control.keyPanSpeed = 7.0;	// 修改焦点位置移动的速度
+
+        // 设置当前是否自动旋转
+        control.autoRotate = false;
+        control.autoRotateSpeed = 2.0; // 默认速度为30秒旋转一周的速度，一秒60帧的情况下
+
+        // 是否开启键盘控制
+        control.enableKeys = true;
+
+        // 控制焦点的位置偏移的键盘按键 默认是上下左右键的 keyCode
+        control.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };
+
+        // 控制相机控制器的鼠标按键设置 默认左键旋转，中键缩放，右键移动焦点位置
+        control.mouseButtons = { ORBIT: THREE.MOUSE.LEFT, ZOOM: THREE.MOUSE.MIDDLE, PAN: THREE.MOUSE.RIGHT };
+    }
+
+    function render() {
+
+        //更新Tween
+        TWEEN.update();
+
+        control.update();
+
+        renderer.render(scene, camera);
+    }
+
+    function onWindowResize() {
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+    }
+
+    function animate() {
+        //更新控制器
+        render();
+
+        //更新性能插件
+        stats.update();
+
+        requestAnimationFrame(animate);
+    }
+
+    function draw() {
+        initGui();
+        initRender();
+        initScene();
+        initCamera();
+        initLight();
+        initModel();
+        initStats();
+
+        initControl();
+
+        animate();
+        window.onresize = onWindowResize;
+    }
+</script>
+</html>

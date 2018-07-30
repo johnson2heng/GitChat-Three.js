@@ -41,3 +41,8 @@
 - 骨骼动画实现案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/11%E7%AC%AC%E5%8D%81%E4%B8%80%E8%8A%82%20animation/skeleton.html)
 - JSON模型变形动画案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/11%E7%AC%AC%E5%8D%81%E4%B8%80%E8%8A%82%20animation/morphAnimation.html)
 - GLTF模型骨骼动画案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/11%E7%AC%AC%E5%8D%81%E4%B8%80%E8%8A%82%20animation/skeletonAnimation.html)
+
+12. 12第十二节 tween
+- 普通案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/12%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%8A%82%20tween/simple.html)
+- 链式补间案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/12%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%8A%82%20tween/chain.html)
+- 循环案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/12%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%8A%82%20tween/repeat.html)

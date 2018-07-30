@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Tween简单应用案例</title>
+    <title>Tween链式调用案例</title>
     <style type="text/css">
         html, body {
             margin: 0;
@@ -103,17 +103,16 @@
         cube.castShadow = true; //开启阴影
         scene.add(cube);
 
-        //设置tween
-        var position = {x:-40, y:0, z:-30};
-        tween = new TWEEN.Tween(position);
+        //直接链式实现tween
+        tween = new TWEEN.Tween(cube.position).to({x:40, y:30, z:30}, 2000);
 
-        //设置移动的目标和移动时间
-        tween.to({x:40, y:30, z:30}, 2000);
+        var tween2 = new TWEEN.Tween(cube.position).to({x:40, y:30, z:-30}, 2000);
 
-        //设置每次更新的回调，然后修改几何体的位置
-        tween.onUpdate(function (pos) {
-            cube.position.set(pos.x, pos.y, pos.z);
-        });
+        var tween3 = new TWEEN.Tween(cube.position).to({x:-40, y:0, z:-30}, 2000);
+
+        tween.chain(tween2);
+        tween2.chain(tween3);
+        tween3.chain(tween);
     }
 
     function initStats() {

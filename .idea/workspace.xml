@@ -26,23 +26,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="274" />
+          <entry key="html" value="403" />
           <entry key="js" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="274" />
+          <entry key="HTML" value="403" />
           <entry key="JavaScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="html" value="3" />
           <entry key="js" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="HTML" value="3" />
           <entry key="JavaScript" value="1" />
         </counts>
       </usages-collector>
@@ -70,28 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/12第十二节 tween/simple.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="113" column="36" lean-forward="true" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
-              <folding>
-                <element signature="e#1494#2319#0" />
-                <element signature="e#3214#3296#0" />
-                <element signature="e#3325#5305#0" />
-                <element signature="e#5329#5404#0" />
-                <element signature="e#5436#5615#0" />
-                <element signature="e#5640#5764#0" />
-                <element signature="e#5786#6026#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/Tween.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
+            <state relative-caret-position="247">
               <caret line="212" column="6" lean-forward="true" selection-start-line="212" selection-start-column="6" selection-end-line="212" selection-end-column="6" />
               <folding>
                 <element signature="e#0#276#0" />
@@ -265,6 +249,49 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/12第十二节 tween/chain.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="106" column="76" lean-forward="true" selection-start-line="105" selection-start-column="8" selection-end-line="106" selection-end-column="76" />
+              <folding>
+                <element signature="e#1648#2473#0" />
+                <element signature="e#3691#5671#0" />
+                <element signature="e#5695#5813#0" />
+                <element signature="e#5845#6024#0" />
+                <element signature="e#6049#6173#0" />
+                <element signature="e#6195#6435#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/12第十二节 tween/simple.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="112" column="8" lean-forward="true" selection-start-line="112" selection-start-column="8" selection-end-line="115" selection-end-column="11" />
+              <folding>
+                <element signature="e#3580#3662#0" />
+                <element signature="e#3691#5671#0" />
+                <element signature="e#5695#5813#0" />
+                <element signature="e#5845#6024#0" />
+                <element signature="e#6049#6173#0" />
+                <element signature="e#6195#6435#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/12第十二节 tween/repeat.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -330,6 +357,8 @@
         <option value="$PROJECT_DIR$/10第十节 loaders/JSONLoader.html" />
         <option value="$PROJECT_DIR$/js/Tween.js" />
         <option value="$PROJECT_DIR$/12第十二节 tween/simple.html" />
+        <option value="$PROJECT_DIR$/12第十二节 tween/chain.html" />
+        <option value="$PROJECT_DIR$/12第十二节 tween/repeat.html" />
       </list>
     </option>
   </component>
@@ -339,7 +368,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1932" />
@@ -356,6 +385,11 @@
             <path>
               <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
               <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitChat-Three.js" type="462c0819:PsiDirectoryNode" />
+              <item name="12第十二节 tween" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GitChat-Three.js" type="b2602c69:ProjectViewProjectNode" />
@@ -385,8 +419,8 @@
       <recent name="D:\work\github\GitChat-Three.js\js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\work\github\GitChat-Three.js\js" />
       <recent name="D:\work\github\GitChat-Three.js\12第十二节 tween" />
+      <recent name="D:\work\github\GitChat-Three.js\js" />
       <recent name="D:\work\github\GitChat-Three.js\10第十节 loaders" />
       <recent name="D:\work\github\GitChat-Three.js\js\models\gltf\marie" />
       <recent name="D:\work\github\GitChat-Three.js\js\loaders" />
@@ -443,15 +477,15 @@
       <workItem from="1532860763773" duration="2412000" />
       <workItem from="1532869825853" duration="599000" />
       <workItem from="1532871697692" duration="754000" />
-      <workItem from="1532951488028" duration="2648000" />
+      <workItem from="1532951488028" duration="9063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138822000" />
+    <option name="totallyTimeSpent" value="145237000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24682875" />
@@ -482,14 +516,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/04第四节 geometry/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/03第三节/index.html" />
     <entry file="file://$PROJECT_DIR$/02第二节/index.html" />
     <entry file="file://$PROJECT_DIR$/01第一节/index.html" />
     <entry file="file://$PROJECT_DIR$/06第六节 Light/spotLight.html">
@@ -694,9 +720,67 @@
     <entry file="file://$PROJECT_DIR$/js/models/gltf/marie/scene.bin">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/models/json/file.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="e#290#6941#0" />
+            <element signature="n#!!block;n#object#0;n#!!top" />
+            <element signature="e#7065#7215#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/10第十节 loaders/JSONLoader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <element signature="e#1295#4361#0" />
+            <element signature="e#1340#4026#0" />
+            <element signature="e#1378#2097#0" />
+            <element signature="e#2137#2419#0" />
+            <element signature="e#2459#3450#0" />
+            <element signature="e#3488#4016#0" />
+            <element signature="e#4405#4718#0" />
+            <element signature="e#4769#5203#0" />
+            <element signature="e#5250#5597#0" />
+            <element signature="e#5624#6449#0" />
+            <element signature="e#6476#6558#0" />
+            <element signature="e#6587#6666#0" />
+            <element signature="e#6690#6765#0" />
+            <element signature="e#6797#6976#0" />
+            <element signature="e#7001#7125#0" />
+            <element signature="e#7147#7366#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/11第十一节 animation/morphAnimation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1045">
+          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/11第十一节 animation/skeleton.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/11第十一节 animation/skeletonAnimation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/Tween.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
+        <state relative-caret-position="247">
           <caret line="212" column="6" lean-forward="true" selection-start-line="212" selection-start-column="6" selection-end-line="212" selection-end-column="6" />
           <folding>
             <element signature="e#0#276#0" />
@@ -869,64 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/models/json/file.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="e#290#6941#0" />
-            <element signature="n#!!block;n#object#0;n#!!top" />
-            <element signature="e#7065#7215#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10第十节 loaders/JSONLoader.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="e#1295#4361#0" />
-            <element signature="e#1340#4026#0" />
-            <element signature="e#1378#2097#0" />
-            <element signature="e#2137#2419#0" />
-            <element signature="e#2459#3450#0" />
-            <element signature="e#3488#4016#0" />
-            <element signature="e#4405#4718#0" />
-            <element signature="e#4769#5203#0" />
-            <element signature="e#5250#5597#0" />
-            <element signature="e#5624#6449#0" />
-            <element signature="e#6476#6558#0" />
-            <element signature="e#6587#6666#0" />
-            <element signature="e#6690#6765#0" />
-            <element signature="e#6797#6976#0" />
-            <element signature="e#7001#7125#0" />
-            <element signature="e#7147#7366#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11第十一节 animation/morphAnimation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11第十一节 animation/skeleton.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11第十一节 animation/skeletonAnimation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/models/json/rvt.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -945,18 +971,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/12第十二节 tween/chain.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="106" column="76" lean-forward="true" selection-start-line="105" selection-start-column="8" selection-end-line="106" selection-end-column="76" />
+          <folding>
+            <element signature="e#1648#2473#0" />
+            <element signature="e#3691#5671#0" />
+            <element signature="e#5695#5813#0" />
+            <element signature="e#5845#6024#0" />
+            <element signature="e#6049#6173#0" />
+            <element signature="e#6195#6435#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12第十二节 tween/repeat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/12第十二节 tween/simple.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="113" column="36" lean-forward="true" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
+        <state relative-caret-position="434">
+          <caret line="112" column="8" lean-forward="true" selection-start-line="112" selection-start-column="8" selection-end-line="115" selection-end-column="11" />
           <folding>
-            <element signature="e#1494#2319#0" />
-            <element signature="e#3214#3296#0" />
-            <element signature="e#3325#5305#0" />
-            <element signature="e#5329#5404#0" />
-            <element signature="e#5436#5615#0" />
-            <element signature="e#5640#5764#0" />
-            <element signature="e#5786#6026#0" />
+            <element signature="e#3580#3662#0" />
+            <element signature="e#3691#5671#0" />
+            <element signature="e#5695#5813#0" />
+            <element signature="e#5845#6024#0" />
+            <element signature="e#6049#6173#0" />
+            <element signature="e#6195#6435#0" />
           </folding>
         </state>
       </provider>

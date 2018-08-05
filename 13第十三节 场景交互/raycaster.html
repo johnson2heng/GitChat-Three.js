@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>JSON模型加载案例</title>
+    <title>点击事件案例</title>
     <style type="text/css">
         html, body {
             margin: 0;
@@ -47,15 +47,15 @@
     function initGui() {
         //声明一个保存需求修改的相关数据的对象
         gui = {
-            createScene:function () {
+            createScene: function () {
                 //首先先删除掉当前场景所含有的立方体
                 deleteGroup("group");
                 //创建一个新的模型组
                 let group = new THREE.Group();
                 group.name = "group";
                 let geometry = new THREE.BoxGeometry(10, 10, 10);
-                for(let i=0; i<30; i++){
-                    let material = new THREE.MeshLambertMaterial({color:randomColor()});
+                for (let i = 0; i < 30; i++) {
+                    let material = new THREE.MeshLambertMaterial({color: randomColor()});
                     let mesh = new THREE.Mesh(geometry, material);
                     //随机位置
                     mesh.position.set(THREE.Math.randFloatSpread(200), THREE.Math.randFloatSpread(200), THREE.Math.randFloatSpread(200));
@@ -63,22 +63,22 @@
                 }
                 scene.add(group);
             },
-            exporterScene:function () {
+            exporterScene: function () {
                 //首先将场景转成json对象
                 let group = scene.getObjectByName("group");
-                if(!group) return;
+                if (!group) return;
                 let obj = group.toJSON();
                 //将json对象转成json字符串并存储
                 download("file.json", JSON.stringify(obj));
             },
-            importerScene:function () {
+            importerScene: function () {
                 //创建一个input来获取json数据
                 let input = document.createElement("input");
                 input.type = "file";
                 input.addEventListener("change", function () {
                     let file = input.files[0];
                     //判断是否是json格式的文件
-                    if(file.type.indexOf("json") >= 0){
+                    if (file.type.indexOf("json") >= 0) {
                         //首先先删除掉当前场景所含有的立方体
                         deleteGroup("group");
 
@@ -95,7 +95,7 @@
                 });
                 input.click();
             },
-            loaderScene:function () {
+            loaderScene: function () {
                 //首先先删除掉当前场景所含有的立方体
                 deleteGroup("group");
 
@@ -118,14 +118,14 @@
 
         gui.loaderScene();
     }
-    
+
     //随机颜色
     function randomColor() {
-        var arrHex = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d","e","f"],
+        var arrHex = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"],
             strHex = "#",
             index;
 
-        for(var i = 0; i < 6; i++) {
+        for (var i = 0; i < 6; i++) {
             index = Math.round(Math.random() * 15);
             strHex += arrHex[index];
         }
@@ -150,10 +150,10 @@
     //删除group
     function deleteGroup(name) {
         let group = scene.getObjectByName(name);
-        if(!group) return;
+        if (!group) return;
         //删除掉所有的模型组内的mesh
         group.traverse(function (item) {
-            if(item instanceof THREE.Mesh){
+            if (item instanceof THREE.Mesh) {
                 item.geometry.dispose(); //删除几何体
                 item.material.dispose(); //删除材质
             }
@@ -220,6 +220,47 @@
         requestAnimationFrame(animate);
     }
 
+    function addTouch() {
+        function onMouseClick(event) {
+
+            //声明射线和mouse变量
+            var raycaster = new THREE.Raycaster();
+            var mouse = new THREE.Vector2();
+
+            //通过鼠标点击的位置计算出射线所需要的点的位置，以屏幕中心为原点，值的范围为-1到1.
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            //根据在屏幕的二维位置以及相机的矩阵更新射线的位置
+            raycaster.setFromCamera(mouse, camera);
+
+            // 获取射线直线和所有模型相交的数组集合
+            var intersects = raycaster.intersectObjects(scene.children, true); //增加第二个参数，可以遍历子子孙孙对象
+
+            //intersects是返回的一个数组，如果当前位置没有可选中的对象，那这个数组为空，否则为多个对象组成的数组，排列顺序为距离屏幕的距离从近到远的顺序排列
+            //数组的每一个子对象内包含：
+            // distance：距离屏幕的距离
+            // face：与射线相交的模型的面
+            // faceIndex：与射线相交的模型的面的下标
+            // object：与射线相交的模型对象
+            // point：射线与模型相交的点的位置坐标
+            // uv：与射线相交的模型的面的uv映射位置
+
+            console.log(intersects);
+            //将所有的相交的模型的颜色设置为红色，如果只需要将第一个触发事件，那就数组的第一个模型改变颜色即可
+            /*for (var i = 0; i < intersects.length; i++) {
+                intersects[i].object.material.color.set(0xff0000);
+            }*/
+
+            //判断当前数组是否为空,不为空则获取最近的的模型，将其颜色修改为红色
+            if(intersects.length > 0){
+                intersects[0].object.material.color.set(0xff0000);
+            }
+        }
+
+        document.addEventListener("click", onMouseClick, false);
+    }
+
     function draw() {
         initRender();
         initScene();
@@ -229,6 +270,8 @@
         initGui();
 
         initControl();
+
+        addTouch();
 
         animate();
         window.onresize = onWindowResize;

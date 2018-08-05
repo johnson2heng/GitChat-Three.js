@@ -46,3 +46,7 @@
 - 普通案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/12%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%8A%82%20tween/simple.html)
 - 链式补间案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/12%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%8A%82%20tween/chain.html)
 - 循环案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/12%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%8A%82%20tween/repeat.html)
+
+13. 13第十三节 场景交互
+- 点击选中模型 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/13%E7%AC%AC%E5%8D%81%E4%B8%89%E8%8A%82%20%E5%9C%BA%E6%99%AF%E4%BA%A4%E4%BA%92/raycaster.html)
+- 框选案例 [点击这里](https://johnson2heng.github.io/GitChat-Three.js/13%E7%AC%AC%E5%8D%81%E4%B8%89%E8%8A%82%20%E5%9C%BA%E6%99%AF%E4%BA%A4%E4%BA%92/boxselection.html)

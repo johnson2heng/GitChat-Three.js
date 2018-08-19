@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>游戏操作案例</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        /*移动按钮的样式*/
+        #joystick {
+            position: fixed;
+            left: 50px;
+            bottom: 50px;
+            width: 120px;
+            height: 120px;
+            background: #ccc;
+            border-radius: 50%;
+            background: url("../images/joystick.png") center no-repeat;
+            background-size: 100% 100%;
+        }
+
+        #joystick .bar-wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        #joystick .bar-wrap .bar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: blue;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            background: url("../images/joystick-bar.png") center no-repeat;
+            background-size: 100% 100%;
+        }
+
+        #joystick .bar-wrap .bar.active {
+            margin-top: -50px;
+        }
+
+        /*技能按键按钮样式*/
+        #skills{
+            position: fixed;
+            bottom: 0;
+            right:0;
+        }
+
+        #skills .bar:active{
+            transform: translateY(1px);
+        }
+        /*普通攻击按钮样式*/
+        #skills .attack{
+            width:80px;
+            height:80px;
+            position: absolute;
+            right:50px;
+            bottom:50px;
+            background: url("../images/attack.png") center no-repeat;
+            background-size: 100% 100%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body onload="draw();">
+<!--游戏移动操作杆-->
+<div id="joystick">
+    <div class="bar-wrap">
+        <div class="bar"></div>
+    </div>
+</div>
+<!--技能按键组-->
+<div id="skills">
+    <div class="attack bar"></div>
+</div>
+</body>
+<script src="../js/three.js"></script>
+<script src="../js/loaders/inflate.min.js"></script>
+<script src="../js/loaders/FBXLoader.js"></script>
+<script src="../js/controls/OrbitControls.js"></script>
+<script src="../js/stats.min.js"></script>
+<script src="../js/dat.gui.min.js"></script>
+<script src="../js/dop.min.js"></script>
+
+<!--移动端调试工具-->
+<!--<script src="https://cdn.bootcss.com/vConsole/3.2.0/vconsole.min.js"></script>
+<script>
+    // 初始化
+    var vConsole = new VConsole();
+    console.log('Hello world');
+</script>-->
+
+
+<script>
+    var renderer, camera, scene, gui, light, stats, naruto, mixer, actions, datGui;
+    var clock = new THREE.Clock();
+    var dop = new Dop(); //个人兼容移动端操作的库
+
+    function initRender() {
+        if(dop.browserRedirect() === "pc"){
+            renderer = new THREE.WebGLRenderer({antialias: true, logarithmicDepthBuffer: true});
+        }
+        else{
+            renderer = new THREE.WebGLRenderer({antialias: true});
+        }
+        //renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xeeeeee);
+        renderer.shadowMap.enabled = true;
+        //告诉渲染器需要阴影效果
+        document.body.appendChild(renderer.domElement);
+    }
+
+    function initCamera() {
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 20000);
+        camera.position.set(0, 800, -800);
+        camera.lookAt(new THREE.Vector3());
+    }
+
+    function initScene() {
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xa0a0a0);
+        scene.fog = new THREE.Fog(0xa0a0a0, 1000, 11000);
+    }
+
+    //初始化dat.GUI简化试验流程
+    function initGui() {
+        //声明一个保存需求修改的相关数据的对象
+        gui = {
+            helper: true //模型辅助线
+        };
+        //datGui = new dat.GUI();
+        //将设置属性添加到gui当中，gui.add(对象，属性，最小值，最大值）
+
+        /*datGui.add(gui, "helper").onChange(function (e) {
+            meshHelper.visible = e;
+        });*/
+    }
+
+    function initLight() {
+        scene.add(new THREE.AmbientLight(0x444444));
+
+        light = new THREE.DirectionalLight(0xaaaaaa);
+        light.position.set(0, 200, 100);
+        light.lookAt(new THREE.Vector3());
+
+        light.castShadow = true;
+        light.shadow.camera.top = 180;
+        light.shadow.camera.bottom = -180;
+        light.shadow.camera.left = -180;
+        light.shadow.camera.right = 180;
+
+        //告诉平行光需要开启阴影投射
+        light.castShadow = true;
+
+        scene.add(light);
+    }
+
+    function initModel() {
+
+        //辅助工具
+        var helper = new THREE.AxesHelper(50);
+        scene.add(helper);
+
+        // 地板
+        var groundTexture = new THREE.TextureLoader().load('../images/grasslight-big.jpg');
+        groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+        groundTexture.repeat.set(25, 25);
+        groundTexture.anisotropy = 16;
+        var groundMaterial = new THREE.MeshLambertMaterial({map: groundTexture});
+        var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(20000, 20000), groundMaterial);
+        mesh.rotation.x = -Math.PI / 2;
+        mesh.receiveShadow = true;
+        scene.add(mesh);
+
+        //加载模型
+        var loader = new THREE.FBXLoader();
+        loader.load("../js/models/fbx/Naruto.fbx", function (mesh) {
+
+            //设置模型的每个部位都可以投影
+            mesh.traverse(function (child) {
+                if (child.isMesh) {
+                    child.castShadow = true;
+                    child.receiveShadow = true;
+                }
+            });
+
+            //创建动画
+            mixer = mesh.mixer = new THREE.AnimationMixer(mesh);
+
+            actions = []; //所有的动画数组
+            //var animations = datGui.addFolder("animations");
+
+            for (var i = 0; i < mesh.animations.length; i++) {
+                createAction(i);
+            }
+
+            function createAction(i) {
+                actions[i] = mixer.clipAction(mesh.animations[i]);
+                gui["action" + i] = function () {
+                    for (var j = 0; j < actions.length; j++) {
+                        if (j === i) {
+                            actions[j].play();
+                        }
+                        else {
+                            actions[j].stop();
+                        }
+                    }
+                };
+
+                //animations.add(gui, "action" + i);
+            }
+
+            //添加暂停所有动画的按键
+            gui.stop = function () {
+                for (var i = 0; i < actions.length; i++) {
+                    actions[i].stop();
+                }
+            };
+
+            //第24个动作是鸣人站立的动作
+            gui["action" + 24]();
+
+            mesh.position.y += 110;
+
+            //设置光线焦点模型
+            light.target = mesh;
+
+            scene.add(mesh);
+
+            naruto = mesh;
+        });
+    }
+
+    //初始化性能插件
+    function initStats() {
+        stats = new Stats();
+        document.body.appendChild(stats.dom);
+    }
+
+    //当前人物状态的对象存储
+    let state = {
+        move:false, //当前人物是否处于移动状态
+        skills:0, //当前人物是否处于攻击或者释放技能状态 0：不处于攻击状态 >0:正处于释放某种技能的状态
+    };
+
+    //添加用户按钮技能操作事件
+    function addSkills() {
+        let skill = document.querySelector("#skills");
+
+        //普通攻击事件
+        let attackList = [12, 13, 14, 15, 16]; //连招的循序
+        let attackCombo = false; //是否连招，接下一个攻击
+        let attackIndex = 0; //当前攻击效果释放的下标
+        let attackInterval; //当前攻击的定时器
+        dop.$(skill.querySelector(".attack")).on("tap", function () {
+            //触发攻击事件
+
+            //console.log(naruto.animations);
+
+            //attackIndex 等于0，当前不处于攻击状态  不等于，当前处于攻击状态
+            if(state.skills === 0){
+                state.skills++;
+                gui["action" + attackList[state.skills-1]]();
+                attackInterval = setInterval(function () {
+                    if(attackCombo){
+                        //如果设置了连招，上一个攻击动作完成后，进行下一个攻击动作
+                        state.skills++;
+                        //如果整套攻击动作已经执行完成，则清除定时器
+                        if(state.skills-1 >= attackList.length){
+                            closeAttack();
+                            return;
+                        }
+
+                        //进行下一个动作
+                        gui["action" + attackList[state.skills-1]]();
+
+                        attackCombo = false;
+                    }
+                    else{
+                        closeAttack();
+                    }
+                }, naruto.animations[attackList[state.skills-1]].duration*1000);
+            }
+            else{
+                attackCombo = true;
+            }
+
+            //关闭攻击状态
+            function closeAttack() {
+                state.skills = 0;
+                //根据状态设置是移动状态还是站立状态
+                state.move ? gui["action" + 3]() :gui["action" + 24](); //回到站立状态
+                clearInterval(attackInterval);
+            }
+        });
+    }
+
+    //添加用户按钮移动操作事件
+    function addStick() {
+        let control = document.querySelector("#joystick");
+        let barWrap = control.querySelector(".bar-wrap");
+        let bar = control.querySelector(".bar");
+        let dop = new Dop();
+        let media = dop.browserRedirect();
+        let center = new THREE.Vector2(); //操作杆的中心
+        let mouse = new THREE.Vector2(); //鼠标按下的位置
+        let doc = dop.$(document);
+
+        dop.$(control).on("down", function (event) {
+            event.preventDefault();
+
+            //获取当前的按钮中心点
+            center.x = window.innerWidth - parseFloat(dop.getFinalStyle(control, "right")) - parseFloat(dop.getFinalStyle(control, "width")) / 2;
+            center.y = window.innerHeight - parseFloat(dop.getFinalStyle(control, "bottom")) - parseFloat(dop.getFinalStyle(control, "height")) / 2;
+
+            getRadian(event);
+
+            //鼠标按下切换跑步动作
+            state.skills === 0 && gui["action" + 3]();
+
+            //给document绑定拖拽和鼠标抬起事件
+            doc.on("move", move);
+            doc.on("up", up);
+        });
+
+        function move(event) {
+            getRadian(event);
+        }
+
+        function up() {
+            doc.remove("move", move);
+            doc.remove("up", up);
+
+            //按钮复原
+            bar.style.marginTop = 0;
+            barWrap.style.transform = `translate(-50%, -50%) rotate(0deg)`;
+            bar.style.transform = `translate(-50%, -50%) rotate(0deg)`;
+
+            //设置移动距离为零
+            characterMove(new THREE.Vector2(), 0);
+
+            //鼠标抬起切换站立状态
+            state.skills === 0 && gui["action" + 24]();
+        }
+
+        //获取到两点间的距离，偏转的位置
+        function getRadian(event) {
+
+            //获取到当前按下的位置
+            if (media === "pc") {
+                mouse.x = event.clientX;
+                mouse.y = event.clientY;
+            }
+            else {
+                mouse.x = event.touches[0].clientX;
+                mouse.y = event.touches[0].clientY;
+            }
+
+            let distance = center.distanceTo(mouse);
+            distance >= parseFloat(dop.getFinalStyle(control, "width")) / 2 && (distance = parseFloat(dop.getFinalStyle(control, "width")) / 2);
+
+            //计算两点之间的夹角
+            mouse.x = mouse.x - center.x;
+            mouse.y = mouse.y - center.y;
+
+            //修改操作杆的css样式
+            bar.style.marginTop = `-${distance}px`;
+            bar.style.transform = `translate(-50%, -50%) rotate(-${(mouse.angle() / Math.PI * 180 + 90) % 360}deg)`;
+            barWrap.style.transform = `translate(-50%, -50%) rotate(${(mouse.angle() / Math.PI * 180 + 90) % 360}deg)`;
+
+            //修改当前模型的朝向
+            if(naruto){
+                naruto.rotation.y = - mouse.angle() - Math.PI/2;
+            }
+
+            //修改当前的移动方向和移动比例
+            characterMove(mouse.normalize(), distance / (parseFloat(dop.getFinalStyle(control, "width")) / 2));
+        }
+    }
+
+    //角色移动的方法
+    let direction = new THREE.Matrix4(); //当前移动的旋转矩阵
+    let move = new THREE.Vector3(); //当前位置移动的距离
+    function characterMove(vector, ratio) {
+
+        //重置矩阵
+        direction.identity();
+
+        //通过相机的四元数获取到相机的旋转矩阵
+        let quaternion = camera.quaternion;
+        direction.makeRotationFromQuaternion(quaternion);
+
+        //获取到操作杆的移动方向
+        move.x = vector.x;
+        move.y = 0;
+        move.z = vector.y;
+
+        //通过相机方向和操作杆获得最终角色的移动方向
+        move.applyMatrix4(direction);
+        move.normalize();
+
+        move.x = move.x * ratio * 10;
+        move.z = move.z * ratio * 10;
+    }
+
+    let position = new THREE.Vector3();
+    function render() {
+
+        var time = clock.getDelta();
+        if (mixer) {
+            mixer.update(time);
+        }
+
+        //如果模型添加成功，则每帧都移动角色位置
+        if (naruto) {
+            //获取当前位置
+            position.x += move.x;
+            position.z += move.z;
+
+            //修改模型位置
+            naruto.position.x = position.x;
+            naruto.position.z = position.z;
+
+            //修改平衡光的位置
+            light.position.x = position.x;
+            light.position.z = position.z + 100;
+
+            //修改相机位置
+            camera.position.x = position.x;
+            camera.position.z = position.z - 800;
+        }
+    }
+
+    //窗口变动触发的函数
+    function onWindowResize() {
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+    }
+
+    function animate() {
+        //更新控制器
+        render();
+
+        //更新性能插件
+        stats.update();
+
+        renderer.render(scene, camera);
+
+        requestAnimationFrame(animate);
+    }
+
+    function draw() {
+        initGui();
+        initRender();
+        initScene();
+        initCamera();
+        initLight();
+        initModel();
+        initStats();
+
+        addSkills();
+        addStick();
+
+        animate();
+        window.onresize = onWindowResize;
+    }
+
+
+</script>
+</html>

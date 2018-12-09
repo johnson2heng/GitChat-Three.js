@@ -18,30 +18,30 @@
     <session id="-286451022">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.5" value="4" />
+          <entry key="project.open.time.5" value="5" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="3827" />
+          <entry key="html" value="3829" />
           <entry key="js" value="2" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="3827" />
+          <entry key="HTML" value="3829" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="2" />
         </counts>
@@ -67,27 +67,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/16 简单案例/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="338" column="29" lean-forward="true" selection-start-line="338" selection-start-column="29" selection-end-line="338" selection-end-column="29" />
+            <state relative-caret-position="624">
+              <caret line="295" selection-start-line="295" selection-end-line="301" selection-end-column="13" />
               <folding>
-                <element signature="e#2535#2731#0" />
-                <element signature="e#2758#2912#0" />
-                <element signature="e#3273#3755#0" />
-                <element signature="e#3782#6050#0" />
-                <element signature="e#4616#4778#0" />
-                <element signature="e#5030#5078#0" />
-                <element signature="e#5684#5815#0" />
-                <element signature="e#6091#6173#0" />
-                <element signature="e#7466#7498#0" />
-                <element signature="e#7932#7964#0" />
-                <element signature="e#8717#8749#0" />
-                <element signature="e#7236#7277#0" />
-                <element signature="e#7301#7724#0" />
-                <element signature="e#7786#8942#0" />
-                <element signature="e#9108#9564#0" />
-                <element signature="e#9628#10230#0" />
-                <element signature="e#10278#10457#0" />
-                <element signature="e#10482#10647#0" />
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="e#485#802#0" />
+                <element signature="e#832#1011#0" />
+                <element signature="e#1046#1373#0" />
+                <element signature="e#1415#1457#0" />
               </folding>
             </state>
           </provider>
@@ -173,10 +160,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1928" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -184,6 +171,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,13 +211,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../3DArtExhibitionHall" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shjj_bpms_portal" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -313,16 +300,16 @@
       <workItem from="1534436180007" duration="603000" />
       <workItem from="1534573586689" duration="300000" />
       <workItem from="1534581551874" duration="16600000" />
-      <workItem from="1534662599878" duration="11005000" />
+      <workItem from="1534662599878" duration="20046000" />
+      <workItem from="1534779508255" duration="817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191330000" />
+    <option name="totallyTimeSpent" value="201188000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24524313" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -616,27 +603,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/16 简单案例/demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="338" column="29" lean-forward="true" selection-start-line="338" selection-start-column="29" selection-end-line="338" selection-end-column="29" />
+        <state relative-caret-position="624">
+          <caret line="295" selection-start-line="295" selection-end-line="301" selection-end-column="13" />
           <folding>
-            <element signature="e#2535#2731#0" />
-            <element signature="e#2758#2912#0" />
-            <element signature="e#3273#3755#0" />
-            <element signature="e#3782#6050#0" />
-            <element signature="e#4616#4778#0" />
-            <element signature="e#5030#5078#0" />
-            <element signature="e#5684#5815#0" />
-            <element signature="e#6091#6173#0" />
-            <element signature="e#7466#7498#0" />
-            <element signature="e#7932#7964#0" />
-            <element signature="e#8717#8749#0" />
-            <element signature="e#7236#7277#0" />
-            <element signature="e#7301#7724#0" />
-            <element signature="e#7786#8942#0" />
-            <element signature="e#9108#9564#0" />
-            <element signature="e#9628#10230#0" />
-            <element signature="e#10278#10457#0" />
-            <element signature="e#10482#10647#0" />
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="e#485#802#0" />
+            <element signature="e#832#1011#0" />
+            <element signature="e#1046#1373#0" />
+            <element signature="e#1415#1457#0" />
           </folding>
         </state>
       </provider>

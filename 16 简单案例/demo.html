@@ -173,10 +173,6 @@
 
     function initModel() {
 
-        //辅助工具
-        var helper = new THREE.AxesHelper(50);
-        scene.add(helper);
-
         // 地板
         var groundTexture = new THREE.TextureLoader().load('../images/grasslight-big.jpg');
         groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
@@ -204,7 +200,6 @@
             mixer = mesh.mixer = new THREE.AnimationMixer(mesh);
 
             actions = []; //所有的动画数组
-            //var animations = datGui.addFolder("animations");
 
             for (var i = 0; i < mesh.animations.length; i++) {
                 createAction(i);
@@ -222,8 +217,6 @@
                         }
                     }
                 };
-
-                //animations.add(gui, "action" + i);
             }
 
             //添加暂停所有动画的按键
@@ -266,7 +259,6 @@
         //普通攻击事件
         let attackList = [12, 13, 14, 15, 16]; //连招的循序
         let attackCombo = false; //是否连招，接下一个攻击
-        let attackIndex = 0; //当前攻击效果释放的下标
         let attackInterval; //当前攻击的定时器
         dop.$(skill.querySelector(".attack")).on("tap", function () {
             //触发攻击事件
@@ -389,7 +381,7 @@
                 naruto.rotation.y = - mouse.angle() - Math.PI/2;
             }
 
-            //修改当前的移动方向和移动比例
+            //修改当前的移动方向和移动速度
             characterMove(mouse.normalize(), distance / (parseFloat(dop.getFinalStyle(control, "width")) / 2));
         }
     }
